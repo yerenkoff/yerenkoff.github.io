@@ -2,10 +2,42 @@
 <html>
     <head>
         <title>Экспорт промышленного оборудования в страны СНГ</title>
-        <!--        <link rel="stylesheet" href="style.css">-->
+        <link rel="stylesheet" href="style.css">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://fonts.googleapis.com/css?family=Roboto:300,700&amp;subset=cyrillic-ext" rel="stylesheet">
+        <style>
+            #showcase{
+                padding: 20px;
+                height: 550px;
+                background: url("img/bg.jpg");
+                background-position: center;
+                background-attachment: scroll;
+                background-repeat: no-repeat;
+                background-size: cover;
+                display: grid;
+                justify-content: center;
+                align-content: center;
+            }
+            #showcase #left{
+                float: left;
+                width: 60%;
+            }
+            #showcase h1{
+                font-family: 'Roboto', sans-serif;
+                font-weight: bold;
+                font-size: 3em;
+                color: #fff;
+                text-shadow: 0px 0px 10px #333;
+            }
+            #showcase ul{
+                font-family: 'Roboto', sans-serif;
+                font-weight: normal;
+                font-size: 1.2em;
+                color: #fff;
+                margin-top: 20px;
+            }
+        </style>
     </head>
     <body>
         <header class="blur">
@@ -136,22 +168,34 @@
                 <input type="submit" value="Отправить">
             </form>
         </div>
-        <noscript id="deferred-styles">
-            <link rel="stylesheet" type="text/css" href="style.css"/>
-        </noscript>
         <script>
-            var loadDeferredStyles = function() {
-                var addStylesNode = document.getElementById("deferred-styles");
-                var replacement = document.createElement("div");
-                replacement.innerHTML = addStylesNode.textContent;
-                document.body.appendChild(replacement)
-                addStylesNode.parentElement.removeChild(addStylesNode);
-            };
-            var raf = window.requestAnimationFrame || window.mozRequestAnimationFrame ||
-                window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
-            if (raf) raf(function() { window.setTimeout(loadDeferredStyles, 0); });
-            else window.addEventListener('load', loadDeferredStyles);
+            var modal = document.getElementsByClassName("modal")[0];
+
+            function showModal() {
+                var pos = 0;
+                var id = setInterval(show, 3);
+                function show() {
+                    if (pos >= 1) {
+                        clearInterval(id);
+                    } else {
+                        pos = pos + 0.1; 
+                        modal.style.opacity = pos;
+                    }
+                }
+                modal.style.display = "grid";
+                modal.style.overflowY = "scroll";
+                document.documentElement.style.overflow = "hidden";
+            }
+
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.opacity = "0";
+                    setTimeout(function(){
+                        modal.style.display = "none";
+                    }, 500);
+                    document.documentElement.style.overflow = "overlay";
+                }
+            }
         </script>
-        <script src="script.js"></script>
     </body>
 </html>
