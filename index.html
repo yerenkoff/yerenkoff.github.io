@@ -2,7 +2,7 @@
 <html>
     <head>
         <title>Экспорт промышленного оборудования в страны СНГ</title>
-<!--        <link rel="stylesheet" href="style.css">-->
+        <!--        <link rel="stylesheet" href="style.css">-->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://fonts.googleapis.com/css?family=Roboto:300,700&amp;subset=cyrillic-ext" rel="stylesheet">
@@ -140,14 +140,13 @@
             <link rel="stylesheet" type="text/css" href="style.css"/>
         </noscript>
         <script>
-            <script>
-                var loadDeferredStyles = function() {
-                    var addStylesNode = document.getElementById("deferred-styles");
-                    var replacement = document.createElement("div");
-                    replacement.innerHTML = addStylesNode.textContent;
-                    document.body.appendChild(replacement)
-                    addStylesNode.parentElement.removeChild(addStylesNode);
-                };
+            var loadDeferredStyles = function() {
+                var addStylesNode = document.getElementById("deferred-styles");
+                var replacement = document.createElement("div");
+                replacement.innerHTML = addStylesNode.textContent;
+                document.body.appendChild(replacement)
+                addStylesNode.parentElement.removeChild(addStylesNode);
+            };
             var raf = window.requestAnimationFrame || window.mozRequestAnimationFrame ||
                 window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
             if (raf) raf(function() { window.setTimeout(loadDeferredStyles, 0); });
