@@ -640,7 +640,7 @@ main iframe{
 		display: block;
 		border-radius: 3px;
 	}
-	.modal form button{
+	.modal form span{
 		display: inline-block;	
 	}
 }
