@@ -522,6 +522,7 @@ main iframe{
 	position: absolute;
 	top: 0;
 	right: 0;
+	cursor: pointer;
 }
 
 @media (max-width: 1050px){
