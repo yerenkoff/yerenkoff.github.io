@@ -125,7 +125,11 @@
 			function closeModal(){
 				modal.style.opacity="0";
 				setTimeout(function(){modal.style.display="none"},500);
-				document.documentElement.style.overflow="overlay";
+				if (navigator.userAgent.indexOf("Firefox") > -1) {
+					document.documentElement.style.overflow="visible";
+				} else {
+					document.documentElement.style.overflow="overlay";
+				}
 			}
 		</script>
 	</body>
