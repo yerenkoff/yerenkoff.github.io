@@ -509,7 +509,7 @@ main iframe{
 .modal form input:last-of-type:hover{
 	background: #1565C0;
 }
-.modal form button{
+.modal form span{
 	width: 40px;
 	height: 40px;
 	background: none;
@@ -520,7 +520,6 @@ main iframe{
 	top: 0;
 	right: 0;
 	display: none;
-	outline: none;
 }
 
 @media (max-width: 1050px){
