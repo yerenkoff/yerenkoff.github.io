@@ -515,7 +515,6 @@ main iframe{
 	align-items: center;
 	width: 40px;
 	height: 40px;
-	background: #ccc;
 	border: none;
 	color: #aaa;
 	font-size: 1.2em;
@@ -523,6 +522,7 @@ main iframe{
 	top: 0;
 	right: 0;
 	cursor: pointer;
+	outline: none;
 }
 
 @media (max-width: 1050px){
