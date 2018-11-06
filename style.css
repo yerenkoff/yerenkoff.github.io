@@ -519,6 +519,7 @@ main iframe{
 	position: absolute;
 	top: 0;
 	right: 0;
+	display: none;
 }
 
 @media (max-width: 1050px){
@@ -638,6 +639,9 @@ main iframe{
 		width: 90%;
 		display: block;
 		border-radius: 3px;
+	}
+	.modal form button{
+		display: inline-block;	
 	}
 }
 
