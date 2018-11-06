@@ -510,16 +510,18 @@ main iframe{
 	background: #1565C0;
 }
 .modal form span{
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	width: 40px;
 	height: 40px;
-	background: none;
+	background: #ccc;
 	border: none;
 	color: #aaa;
 	font-size: 1.2em;
 	position: absolute;
 	top: 0;
 	right: 0;
-	display: none;
 }
 
 @media (max-width: 1050px){
@@ -639,12 +641,6 @@ main iframe{
 		width: 90%;
 		display: block;
 		border-radius: 3px;
-	}
-	.modal form span{
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		background: #ccc;
 	}
 }
 
