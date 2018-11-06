@@ -643,7 +643,8 @@ main iframe{
 	.modal form span{
 		display: flex;
 		justify-content: center;
-		align-items: center;	
+		align-items: center;
+		background: #ccc;
 	}
 }
 
