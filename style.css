@@ -567,9 +567,17 @@ main iframe{
 		float: none;
 		margin: 30px auto;
 		padding: 0px;
+		display: block;
 	}
 	#showcase form h1{
-		margin: 0px auto 30px;
+		margin: 30px auto;
+	}
+	#showcase form p{
+		margin: 20px auto 10px;
+	}
+	#showcase form input{
+		margin: 10px auto;
+		display: block;
 	}
 	main{
 		padding: 0px 0px;
