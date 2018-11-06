@@ -520,6 +520,7 @@ main iframe{
 	top: 0;
 	right: 0;
 	display: none;
+	outline: none;
 }
 
 @media (max-width: 1050px){
