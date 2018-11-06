@@ -117,8 +117,16 @@
 				<input name=name required placeholder="Введите Ваше имя">
 				<input name=phone required placeholder="Введите номер телефона">
 				<input type=submit value=Отправить>
+				<button onclick="closeModal()">×</button>
 			</form>
 		</div>
-		<script>function showModal(){function e(){o>=1?clearInterval(l):(o+=.1,modal.style.opacity=o)}var o=0,l=setInterval(e,3);modal.style.display="grid",modal.style.overflowY="scroll",document.documentElement.style.overflow="hidden"}var modal=document.getElementsByClassName("modal")[0];window.onclick=function(e){e.target==modal&&(modal.style.opacity="0",setTimeout(function(){modal.style.display="none"},500),document.documentElement.style.overflow="overlay")}</script>
+		<script>
+			function showModal(){function e(){o>=1?clearInterval(l):(o+=.1,modal.style.opacity=o)}var o=0,l=setInterval(e,3);modal.style.display="grid",modal.style.overflowY="scroll",document.documentElement.style.overflow="hidden"}var modal=document.getElementsByClassName("modal")[0];window.onclick=function(e){e.target==modal&&(modal.style.opacity="0",setTimeout(function(){modal.style.display="none"},500),document.documentElement.style.overflow="overlay")}
+			function closeModal(){
+				modal.style.opacity="0";
+				setTimeout(function(){modal.style.display="none"},500);
+				document.documentElement.style.overflow="overlay";
+			}
+		</script>
 	</body>
 </html>
