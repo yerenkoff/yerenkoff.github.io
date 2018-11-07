@@ -34,7 +34,6 @@ header #headerLink{
 	border-bottom: 2px solid #1565C0;
 	margin-top: 25px;
 	transition: .3s;
-	text-decoration: none;
 }
 header #headerLink:hover{
 	border-bottom: 2px solid #000;
@@ -49,17 +48,17 @@ header section{
 	grid-template-columns: 1fr 1fr;
 	grid-template-columns: 1fr 1fr;
 }
-header section a{
+header section span{
 	font-family: 'Roboto', sans-serif;
 	font-weight: normal;
 	font-size: 1.2em;
-	text-decoration: none;
 	text-align: center;
 	color: #555;
 	box-sizing: border-box;
 	transition: .3s;
+	cursor: default;
 }
-header section a:hover{
+header section span:hover{
 	color: #1565C0;
 }
 header section button{
@@ -145,7 +144,7 @@ header section button:hover{
 	font-weight: bold;
 	font-size: 1.2em;
 	color: #000;
-	margin-bottom: 30px;
+	margin: 0 auto 30px;
 	text-shadow: none;
 }
 #showcase form p{
@@ -154,13 +153,14 @@ header section button:hover{
 	font-weight: normal;
 	font-size: 1em;
 	color: #555;
+	margin: 0 auto;
 }
 #showcase form input{
 	width: 270px;
 	height: 40px;
 	padding: 10px;
 	box-sizing: border-box;
-	margin: 10px 0;
+	margin: 10px auto;
 	font-family: 'Roboto', sans-serif;
 	font-weight: normal;
 	font-size: 1em;
@@ -509,16 +509,19 @@ main iframe{
 .modal form input:last-of-type:hover{
 	background: #1565C0;
 }
-.modal form button{
+.modal form span{
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	width: 40px;
 	height: 40px;
-	background: none;
 	border: none;
 	color: #aaa;
 	font-size: 1.2em;
 	position: absolute;
 	top: 0;
 	right: 0;
+	cursor: pointer;
 }
 
 @media (max-width: 1050px){
@@ -544,7 +547,7 @@ main iframe{
 		margin: 20px auto;
 		position: relative;
 	}
-	header section a{
+	header section span{
 		display: block;
 		width: 100%;
 	}
@@ -584,11 +587,8 @@ main iframe{
 	#showcase form h1{
 		margin: 30px auto;
 	}
-	#showcase form p{
-		margin: 20px auto 10px;
-	}
 	#showcase form input{
-		margin: 10px auto;
+		margin: 20px auto;
 		display: block;
 	}
 	main{

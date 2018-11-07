@@ -10,10 +10,10 @@
 	<body>
 		<header>
 			<div class=container>
-				<a id=headerLink href=#/ >ООО «РУСЭКСПОРТ»</a>
+				<h1 id=headerLink>ООО «РУСЭКСПОРТ»</h1>
 				<section>
-					<a href=#/ >+7 (351) 750-17-61</a>
-					<a href=#/ >info@rysexport.ru</a>
+					<span>+7 (351) 750-17-61</span>
+					<span>info@rysexport.ru</span>
 					<button onclick=showModal()>Заказать звонок</button>
 				</section>
 			</div>
@@ -117,7 +117,7 @@
 				<input name=name required placeholder="Введите Ваше имя">
 				<input name=phone required placeholder="Введите номер телефона">
 				<input type=submit value=Отправить>
-				<button onclick="closeModal()">×</button>
+				<span onclick="closeModal()">×</span>
 			</form>
 		</div>
 		<script>
@@ -125,7 +125,11 @@
 			function closeModal(){
 				modal.style.opacity="0";
 				setTimeout(function(){modal.style.display="none"},500);
-				document.documentElement.style.overflow="overlay";
+				if (navigator.userAgent.indexOf("Firefox") > -1) {
+					document.documentElement.style.overflow="visible";
+				} else {
+					document.documentElement.style.overflow="overlay";
+				}
 			}
 		</script>
 	</body>
