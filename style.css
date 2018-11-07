@@ -588,16 +588,14 @@ main iframe{
 	#showcase form h1{
 		margin: 30px auto;
 	}
-<<<<<<< HEAD
 	#showcase form input{
 		margin: 20px auto;
-=======
+    }
 	#showcase form p{
 		margin: 20px auto 10px;
 	}
 	#showcase form input{
 		margin: 10px auto;
->>>>>>> 732e77ad4689c28a10f60b7221a0cc8fddd65cf9
 		display: block;
 	}
 	main{
