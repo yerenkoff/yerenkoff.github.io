@@ -397,7 +397,6 @@ main .diploms li:hover{
 	filter: brightness(1);
 }
 main .diploms li:last-child{
-	height: 400px;
 	background: url(img/diplom2.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -608,6 +607,7 @@ main iframe{
 	}
 	main .exs li{
 		filter: brightness(1);
+        height: 300px;
 	}
 	main h1{
 		width: 95%;
@@ -636,6 +636,10 @@ main iframe{
 	main .diploms{
 		grid-template-columns: repeat(2, 1fr);
 	}
+    main .diploms li{
+        filter: brightness(1);
+        height: 300px;
+    }
 	main .lastInteractiveWindow{
 		width: 90%;
 		max-width: 900px;
