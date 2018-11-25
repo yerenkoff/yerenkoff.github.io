@@ -18,6 +18,23 @@ var footerList;
     }
 );
 
+var fadeIn = function() {
+    var elements = document.getElementsByClassName("hidden");
+    var windowHeight = window.innerHeight;
+    elements[0].style.opacity = 1;
+    elements[1].style.opacity = 1;
+    window.onscroll = function() {
+        checkPosition();
+    }
+    function checkPosition() {
+        for (var j = 0; j < elements.length; j++) {
+            var positionFromTop = elements[j].getBoundingClientRect().top;
+            if (windowHeight - positionFromTop > 50) {
+                elements[j].style.opacity = 1;
+            }
+        }
+    }
+}
 
 function showList(param) {
     footerList = (param.textContent == "Contacts") ? footerLists[0] : footerLists[1];
@@ -67,7 +84,6 @@ function showNav() {
     if (searchBar.style.maxHeight != 0 || searchBar.style.maxHeight != "0px") {
         searchBar.style.maxHeight = "0px";
         materialSearchIcon.textContent = "search";
-
     }
 }
 
@@ -139,4 +155,5 @@ function setShowcaseBackground(panel) {
     });
 }
 
+fadeIn();
 setShowcaseBackground(showcaseImages);

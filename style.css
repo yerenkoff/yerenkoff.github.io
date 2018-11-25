@@ -279,6 +279,7 @@ background: #888;
     list-style: none;
     margin-bottom: 20px;
     padding-bottom: 10px;
+/*    overflow: hidden;*/
 }
 #promos li:nth-of-type(1) .promoImage{
     background-image: url(img/dress.jpeg);
@@ -290,24 +291,33 @@ background: #888;
     background-image: url(img/cat.jpeg);
 }
 #promos li:nth-of-type(2) h2{
-    background: rgba(255, 255, 255, 1);
-    color: #555;
+/*    background: rgba(255, 255, 255, 1);*/
+    color: #eee;
 }
 #promos li:nth-of-type(3) h2{
-    color: #555;
-    background: rgba(255, 255, 255, 1);
+    color: #eee;
+/*    background: #ddd;*/
+/*    background: rgba(255, 255, 255, 1);*/
 }
 #promos li h2{
-    font-size: 2em;
+    font-size: 1.5em;
     font-family: "Work Sans", sans-serif;
     padding: 0px 15px;
     color: #e26c6c;
-    transform: translateY(30px);
+    width: 100%;
+/*    text-align: center;*/
+/*    color: #000;*/
+/*    text-shadow: 2px 2px px #000;*/
+/*    transform: rotate(2deg);*/
     display: inline-block;
     font-weight: bold;
+/*    background: #c14;*/
+    box-sizing: border-box;
     /*    text-shadow: 2px 2px 2px #000;*/
-    /*    background: rgba(0, 0, 0, 0.5);*/
-    background: rgba(255, 255, 255, 1);
+/*        background: rgba(0, 0, 0, 0.5);*/
+/*    background: rgba(255, 255, 255, 1);*/
+/*    box-shadow: 5px 5px 0px #fff;*/
+/*    border: 2px solid #e26c6c;*/
 }
 .promoImage{
     background-position: center;
@@ -507,4 +517,8 @@ footer{
     text-decoration: none;
     color: #090909;
     font-weight: normal;
+}
+.hidden{
+    opacity: 0;
+    transition: 1s;
 }
