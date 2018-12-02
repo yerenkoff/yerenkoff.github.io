@@ -2,14 +2,14 @@
 <html>
     <head>
         <title>RHINO, DOG AND GOAT</title>
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="men.css">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Vollkorn:400,600|Work+Sans:600&amp;subset=cyrillic-ext" rel="stylesheet">
     </head>
     <body>
-        <header id="header">
+        <header>
             <div class="container header">
                 <button onclick="showNav()">
                     <i class="material-icons" id="materialMenuIcon">menu</i>
@@ -87,64 +87,75 @@
                 </form>
             </div>
         </header>
-        <div class="showcase">
-            <div class="container showcaseContainer">
-                <div id="showcaseImages" class="showcaseImages">
-                    <a href="#/" class="showcase__link"></a>
+        <main class="main">
+            <div class="container">
+
+                <h2 class="main__h2">MEN</h2>
+
+                <p class="main__quote">-one of the most interesting things is when you lose your mind where something starts to born...</p>
+
+                <div class="main__sorting">
+                    <button class="sorting__sortButton" onclick="showSort()">Sort by</button>
+                    <nav class="sorting__sortNav">
+                        <a href="#/">price: from low to high</a>
+                        <a href="#/">price: from high to low</a>
+                        <a href="#/">by name</a>
+                        <a href="#/">by recommendations</a>
+                    </nav>
                 </div>
-                <ul class="showcaseArrows">
-                    <li class="arrowButton">‹</li>
-                    <li class="arrowButton">›</li>
-                </ul>
-                <ul class="showcaseCircles">
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                </ul>
-            </div>
-        </div>
-        <main>
-            <div class="container main">
-                <h3 class="mainHeader hidden">Promos</h3>
-                <ul id="promos">
-                    <li class="hidden">
-                        <h2>Gorgeous Dress</h2>
-                        <div class="promoImage"></div>
-                        <p>Look at this amazing wonderful and superb cloth! I want to dress it right now. Oh, how can I hold myself from IT!</p>
-                        <a href="#/" class="smallButton">buy!</a>
-                    </li>
-                    <li class="hidden">
-                        <h2>Lovely hat</h2>
-                        <div class="promoImage"></div>
-                        <p>Very pretty. Very Pretty. The prettiest hat You ever had!</p>
-                        <a href="#/" class="smallButton">buy!</a>
-                    </li>
-                    <li class="hidden">
-                        <h2>Wonderful Cat</h2>
-                        <div class="promoImage"></div>
-                        <p>If you want to buy a cat, BUY it! Here. You really can buy it hear. Really. Real Cat. Sure.</p>
-                        <a href="#/" class="smallButton">buy!</a>
-                    </li>
-                </ul>
-                <h3 class="mainHeader hidden">Here only Jeans.</h3>
-                <ul id="jeans" class="hidden">
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li id="jeansHeaderContainer">
-                        <div id="jeans__headerAndButton">
-                            <h3 id="jeansHeader">Jeans are really awesome!</h3>
-                            <a href="#/" class="smallButton">Look</a>
-                        </div>
-                    </li>
-                </ul>
-                <form action="#?" id="main__emailForm" class="hidden">
-                    <h2>Subscribe! Of course if you want.</h2>
-                    <input type="text" placeholder="type your e-mail">
-                    <button class="smallButton">Subscribe!</button>
-                </form>
+
+                <section class="main__block">
+                    <a href="#/" class="block__product">
+                        <div class="product__image"></div>
+                        <h3 class="product__Name">Name</h3>
+                        <h3 class="product_Price">200$</h3>
+                    </a>
+                    <a href="#/" class="block__product">
+                        <div class="product__image"></div>
+                        <h3 class="product__Name">Name</h3>
+                        <h3 class="product_Price">200$</h3>
+                    </a>
+                    <a href="#/" class="block__product">
+                        <div class="product__image"></div>
+                        <h3 class="product__Name">Name</h3>
+                        <h3 class="product_Price">200$</h3>
+                    </a>
+                    <a href="#/" class="block__product">
+                        <div class="product__image"></div>
+                        <h3 class="product__Name">Name</h3>
+                        <h3 class="product_Price">200$</h3>
+                    </a>
+                </section>
+
+                <div class="main__carousel">
+                    <a href="#/">
+                        <div class="carousel__image">CarouselImage</div>
+                    </a>
+                </div>
+
+                <section class="main__block">
+                    <a href="#/" class="block__product">
+                        <div class="product__image"></div>
+                        <h3 class="product__Name">Name</h3>
+                        <h3 class="product_Price">200$</h3>
+                    </a>
+                    <a href="#/" class="block__product">
+                        <div class="product__image"></div>
+                        <h3 class="product__Name">Name</h3>
+                        <h3 class="product_Price">200$</h3>
+                    </a>
+                    <a href="#/" class="block__product">
+                        <div class="product__image"></div>
+                        <h3 class="product__Name">Name</h3>
+                        <h3 class="product_Price">200$</h3>
+                    </a>
+                    <a href="#/" class="block__product">
+                        <div class="product__image"></div>
+                        <h3 class="product__Name">Name</h3>
+                        <h3 class="product_Price">200$</h3>
+                    </a>
+                </section>
+
             </div>
         </main>
         <footer>
@@ -190,7 +201,6 @@
                 <a href="#/" class="footer__myname">Yerenkoff</a>
             </div>
         </footer>
-        <script src="script.js"></script>
-        <!-- <script type="text/javascript"> setTimeout(function () { location = '' }, 5000) </script> -->
+        <script src="men.js"></script>
     </body>
 </html>
