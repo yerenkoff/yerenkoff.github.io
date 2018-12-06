@@ -1,10 +1,10 @@
-var searchBar = document.getElementById("searchBar");
-var materialSearchIcon = document.getElementById("materialSearchIcon");
-var navigationBar = document.getElementById("navigationBar");
-var materialMenuIcon = document.getElementById("materialMenuIcon");
-var footerLists = document.getElementsByClassName("footer__list");
 var sortList = document.getElementsByClassName("sorting__sortNav")[0];
-var footerList;
+var carousel = document.getElementsByClassName("main__carousel")[0];
+var carousel__images = document.getElementsByClassName("carousel__images")[0];
+var scrollNumber = 0;
+var startNumber;
+var endNumber;
+var plusNumber;
 
 function showSort() {
     if (sortList.style.maxHeight == 0 || sortList.style.maxHeight == "0px") {
@@ -12,125 +12,132 @@ function showSort() {
     } else {
         sortList.style.maxHeight = "0px";
     }
+    console.log(carousel.scrollLeft);
+    console.log(scrollNumber);
 }
 
-var fadeIn = function() {
-    var elements = document.getElementsByClassName("hidden");
-    var header = document.getElementsByClassName("header")[0];
-    var windowHeight = window.innerHeight;
-    elements[0].style.opacity = 1;
-    elements[1].style.opacity = 1;
-    window.onscroll = function() {
-        checkPosition();
-        checkHeaderPos();
-    }
-
-    function checkHeaderPos() {
-        if (window.pageYOffset > 300) {
-            header.style.maxHeight = "50px";
-            navigationBar.style.top = "49px";
-            searchBar.style.top = "49px";
-            //            header.getElementsByTagName("button").marginTop = 0;
-            [].forEach.call(
-                header.getElementsByTagName("button"),
-                function(element) {
-                    element.style.marginTop = 0;
-                }
-            );
-            console.log(header.getElementsByTagName("button"));
-        } else {
-            header.style.maxHeight = "100px";
-            navigationBar.style.top = "100px";
-            searchBar.style.top = "100px";
-            [].forEach.call(
-                header.getElementsByTagName("button"),
-                function(element) {
-                    element.style.marginTop = "25px";
-                }
-            );
-            //            header.getElementsByTagName("button").marginTop = "50px";
-        }
-    }
-
-    function checkPosition() {
-        for (var j = 0; j < elements.length; j++) {
-            var positionFromTop = elements[j].getBoundingClientRect().top;
-            if (windowHeight - positionFromTop > 50) {
-                elements[j].style.opacity = 1;
-            }
-        }
-    }
+window.onload = function() {
+    // carousel__images.style.width = (window.innerWidth - 300) + 1540 + "px";
+    carousel__images.style.width = (window.innerWidth - 300) + 1540 + "px";
+    scrollNumber = (carousel.scrollWidth - carousel.offsetWidth) / 2;
+    carousel.scrollLeft = scrollNumber;
+    // carouselScrolling("left", 0);
 }
 
-function showList(param) {
-    footerList = (param.textContent == "Contacts") ? footerLists[0] : footerLists[1];
-    if (footerList.style.maxHeight == 0 || footerList.style.maxHeight == "0px") {
-        footerList.style.maxHeight = "500px";
-    } else {
-        footerList.style.maxHeight = "0px";
-    }
-}
+// function carouselScrolling(vec) {
+//     var i = 0;
+//     var id = setInterval(function frame() {
+//         if (i == scrollNumber) {
+//             clearInterval(id);
+//             console.log("clear");
+//             console.log("scrollNumber " + scrollNumber);
+//             console.log("scrolleft " + carousel.scrollLeft);
+//         } else {
+//             i++;
+//             if (vec == "left") {
+//                 carousel.scrollLeft += 1;
+//             } else {
+//                 carousel.scrollLeft -= 1;
+//             }
+//
+//         }
+//     }, 1);
+//
+//
+// }
 
-function showSearch() {
-    document.body.style.overflow = "visible";
-    if (searchBar.style.maxHeight == 0 || searchBar.style.maxHeight == "0px") {
-        searchBar.style.maxHeight = "100px";
-        materialSearchIcon.textContent = "close";
-    } else {
-        searchBar.style.maxHeight = "0px";
-        materialSearchIcon.textContent = "search";
-    }
+// carousel.addEventListener('touchstart', function(event) {
+//     touchNumber = event.changedTouches[0].clientX;
+// }, false);
+//
+// carousel.addEventListener('touchend', function(event) {
+//     // event.preventDefault();
+//     // console.log(event.changedTouches[0].clientX);
+//     if (touchNumber > event.changedTouches[0].clientX) {
+//         console.log("go to left!");
+//         scrollNumber += 320 - Math.round(touchNumber - event.changedTouches[0].clientX);
+//         console.log("start " + touchNumber);
+//         console.log("end " + event.changedTouches[0].clientX);
+//         console.log("diff " + Math.round(touchNumber - event.changedTouches[0].clientX));
+//         console.log("mid " + window.innerWidth / 2);
+//         dir = "left";
+//         carouselScrolling(dir, touchNumber);
+//         // console.log(Math.abs(touchNumber - event.changedTouches[0].clientX));
+//     } else {
+//         console.log("go to right!");
+//         scrollNumber -= 320 - Math.round(event.changedTouches[0].clientX - touchNumber);
+//         console.log("end " + event.changedTouches[0].clientX);
+//         console.log("mid " + window.innerWidth / 2);
+//         dir = "right";
+//         carouselScrolling(dir);
+//     }
+// }, false);
+//
+// carousel.addEventListener('touchmove', function(event) {
+//     console.log(carousel.scrollLeft);
+// });
 
-    if (navigationBar.style.maxHeight != 0 || navigationBar.style.maxHeight != "0px") {
-        navigationBar.style.maxHeight = "0px";
-        materialMenuIcon.textContent = "menu";
-        [].forEach.call(
-            document.getElementsByClassName("list"),
-            function(element) {
-                element.style.maxHeight = 0;
-            }
-        );
-    }
-}
 
-function showNav() {
-    if (navigationBar.style.maxHeight == 0 || navigationBar.style.maxHeight == "0px") {
-        navigationBar.style.maxHeight = window.innerHeight - 100 + "px";
-        navigationBar.style.height = window.innerHeight + "px";
-        materialMenuIcon.textContent = "close";
-        document.body.style.overflow = "hidden";
-    } else {
-        navigationBar.style.maxHeight = "0px";
-        materialMenuIcon.textContent = "menu";
-        document.body.style.overflow = "visible";
-        [].forEach.call(
-            document.getElementsByClassName("list"),
-            function(element) {
-                element.style.maxHeight = 0;
-            }
-        );
-    }
+// window.onload = function() {
+//     carousel__images.style.width = (window.innerWidth - 300) + 1540 + "px";
+//     scrollNumber = (carousel.scrollWidth - carousel.offsetWidth) / 2;
+//     carouselScrolling();
+// }
+//
+// function carouselScrolling(dir) {
+//     if (!dir) {
+//         carousel.scrollLeft = scrollNumber;
+//     } else {
+//         var i = 0;
+//         var id = setInterval(function frame() {
+//             if (i == 20) {
+//                 clearInterval(id);
+//             } else {
+//                 i++;
+//                 if (dir = "left") {
+//                     carousel.scrollLeft -= 1;
+//                 } else if (dir = "right") {
+//                     carousel.scrollLeft += 1;
+//                 }
+//             }
+//         }, 1);
+//     }
+//     console.log(carousel.scrollLeft);
+// }
+//
+// carousel.addEventListener('touchstart', function(event) {
+//     startNumber = event.changedTouches[0].clientX;
+// }, false);
+//
+// carousel.addEventListener('touchend', function(event) {
+//     endNumber = event.changedTouches[0].clientX;
+//     var direction;
+//     if (startNumber > endNumber) {
+//         direction = "left";
+//         plusNumber = 310;
+//         console.log(direction);
+//     } else if (startNumber < endNumber) {
+//         direction = "right";
+//         plusNumber = 310;
+//         console.log(direction);
+//     }
+//     carouselScrolling(direction);
+// }, false);
+//
+// carousel.addEventListener('touchmove', function(event) {
+//     event.preventDefault();
+//     scrollNumber += (startNumber - event.changedTouches[0].clientX) / 10;
+//     carouselScrolling();
+//     console.log(event.changedTouches[0].clientX);
+//     // carousel.scrollLeft += event.changedTouches[0].clientX;
+// });
 
-    if (searchBar.style.maxHeight != 0 || searchBar.style.maxHeight != "0px") {
-        searchBar.style.maxHeight = "0px";
-        materialSearchIcon.textContent = "search";
-    }
-}
-
-function openList(param) {
-    if (param.nextElementSibling.style.maxHeight == 0 || param.nextElementSibling.style.maxHeight == "0px") {
-        param.nextElementSibling.style.maxHeight = "300px";
-        // if (navigationBar.offsetHeight >= (window.innerHeight * 0.7)) {
-        //     document.body.style.overflow = "hidden";
-        // }
-    } else {
-        param.nextElementSibling.style.maxHeight = 0;
-        console.log(navigationBar.offsetHeight);
-        // if (navigationBar.offsetHeight <= (window.innerHeight * 0.7)) {
-        //     document.body.style.overflow = "visible";
-        // }
-    }
-}
-
-fadeIn();
-setShowcaseBackground(showcaseImages);
+// touchstart
+//   initial num
+//
+// touchend
+//   if initial num > touchendnum {
+//     make scroll num smaller
+//   } else {
+//     make scrollnum bigger
+//   }

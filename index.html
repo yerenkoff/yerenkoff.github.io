@@ -3,12 +3,18 @@
     <head>
         <title>RHINO, DOG AND GOAT</title>
         <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="general.css">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Vollkorn:400,600|Work+Sans:600&amp;subset=cyrillic-ext" rel="stylesheet">
     </head>
     <body>
+        <button class="upButton" onclick="goUp()">
+            <i class="material-icons">
+                keyboard_arrow_up
+            </i>
+        </button>
         <header id="header">
             <div class="container header">
                 <button onclick="showNav()">
@@ -143,7 +149,7 @@
                 <form action="#?" id="main__emailForm" class="hidden">
                     <h2>Subscribe! Of course if you want.</h2>
                     <input type="text" placeholder="type your e-mail">
-                    <button class="smallButton">Subscribe!</button>
+                    <button type="button" class="smallButton">Subscribe!</button>
                 </form>
             </div>
         </main>
@@ -191,6 +197,7 @@
             </div>
         </footer>
         <script src="script.js"></script>
+        <script src="general.js"></script>
         <!-- <script type="text/javascript"> setTimeout(function () { location = '' }, 5000) </script> -->
     </body>
 </html>

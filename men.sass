@@ -4,191 +4,6 @@ $mid: #555
 $serif: "Vollkorn", serif
 $sans: "Work Sans", sans-serif
 
-*
-  margin: 0
-  padding: 0
-
-body
-  /*    background: #eee;
-  &::after
-    content: ""
-    width: 100%
-    height: 100px
-    background: #0c0c0c
-    z-index: -1
-    position: absolute
-    top: 0
-    left: 0
-
-a
-  -webkit-tap-highlight-color: transparent
-
-/*Header
-
-header
-  background: #0c0c0c
-  position: fixed
-  top: 0
-  z-index: 9
-  width: 100%
-
-.container
-  max-width: 900px
-  margin: auto
-
-.header
-  display: flex
-  max-height: 100px
-  height: 100vw
-  margin: auto
-  transition: 0.3s
-  transition-timing-function: linear
-
-  /*    transform: rotate(-30deg);
-  button
-    background: none
-    border: none
-    height: 50px
-
-    /*    background: #ccc;
-    margin-top: 25px
-    width: 50px
-    display: grid
-    color: #eee
-    outline: none
-    cursor: pointer
-    -webkit-tap-highlight-color: transparent
-    transition: 0.3s
-    transition-timing-function: linear
-
-  #materialMenuIcon
-    transition: 1s
-
-  h1
-    flex: 1
-    display: grid
-    align-content: center
-    text-align: center
-
-    a
-      text-decoration: none
-      color: #eee
-      font-family: "Vollkorn", serif
-      font-size: 0.7rem
-      font-weight: normal
-      outline: none
-
-#navigationBar
-  position: absolute
-  background: rgba(0, 0, 0, 0.95)
-  width: 100%
-  max-width: 900px
-  max-height: 0
-  overflow-y: scroll
-  top: 100px
-  transition: 0.3s
-  transition-timing-function: linear
-  z-index: 9
-
-  &::-webkit-scrollbar
-    width: 0px
-
-  button
-    /*        background: #ccc;
-    margin: auto !important
-    height: 50px
-    width: 100%
-    font-family: "Work Sans", sans-serif
-    font-size: 1em
-    border-bottom: 1px solid #0c0c0c
-
-  .list
-    /*    background: #999;
-    text-align: center
-    margin-bottom: 0px
-    max-height: 0
-    overflow: hidden
-    transition: 0.5s
-
-    /*    transition-timing-function: linear;
-    &:last-child li:last-child
-      padding-bottom: 10px
-
-  ul li a
-    /*    background: #777;
-    /*    display: block;
-    width: 200px
-    margin: auto
-    height: 40px
-    display: grid
-    align-content: center
-    text-decoration: none
-    text-align: left
-
-    /*    background: #ccc;
-    font-family: "Vollkorn", serif
-    font-weight: normal
-    font-size: 0.7em
-    color: #eee
-    outline: none
-    transition: 0.5s
-    overflow: hidden
-
-    /*-webkit-touch-callout: none;
-     *-webkit-user-select: none;
-     *-khtml-user-select: none;
-     *-moz-user-select: none;
-     *-ms-user-select: none;
-     *user-select: none;
-
-    /*    -webkit-tap-highlight-color: transparent;
-    &:hover
-      /*    height: 0;
-      color: #555
-
-/*#navigationBar ul li{
- *background: #888;
- *}
-
-#searchBar
-  background: rgba(0, 0, 0, 0.95)
-  width: 100%
-  max-height: 0
-  overflow: hidden
-  position: absolute
-  max-width: 900px
-  top: 100px
-  transition: 0.3s
-  transition-timing-function: linear
-  z-index: 9999
-
-#searchForm
-  height: 100%
-  display: flex
-  flex-direction: row
-  padding: 5px
-  box-sizing: border-box
-
-  input
-    flex: 1
-    border: 0
-    padding: 5px
-    height: 40px
-    outline: none
-    font-size: 1em
-    font-family: "Work Sans", sans-serif
-
-  button
-    margin: 0 !important
-    height: 50px
-
-    /*    background: #ccc;
-
-/*Material
-
-.material-icons
-  font-size: 1em !important
-
 main
   margin-top: 100px
   overflow: hidden
@@ -212,12 +27,13 @@ main
     color: $light
     font-size: 1em
     background: $dark
-    padding: 5px
-    margin-right: 10px
+    padding: 10px
+
+    // margin: auto
+    // margin-right: 10px
     margin-bottom: 30px
 
   .main__sorting
-
     .sorting__sortButton
       text-decoration: none
       color: #090909
@@ -251,7 +67,7 @@ main
       max-width: 400px
       max-height: 0
       overflow: hidden
-      transition: .5s
+      transition: 0.5s
       transition-timing-function: linear
 
       a
@@ -260,7 +76,7 @@ main
         color: $dark
         display: block
         line-height: 40px
-        transition: .3s
+        transition: 0.3s
         text-align: center
 
       a:hover
@@ -272,20 +88,26 @@ main
   .main__block
     width: 90%
     display: flex
+    justify-content: center
     flex-wrap: wrap
-    margin: 20px auto
+    margin: 30px auto
+    // background: #aaa
 
     .block__product
+      // background: #ccc
       width: 100%
       max-width: 300px
       height: 400px
-      margin: 0 auto 30px
+      margin: 0 10px 30px
       display: flex
       flex-direction: column
       text-decoration: none
 
+      &:last-child
+        margin-bottom: 0
+
       .product__image
-        background-image: url('img/mtshirt0.jpeg')
+        background-image: url("img/mtshirt0.jpeg")
         background-position: 50%
         background-repeat: no-repeat
         background-size: cover
@@ -310,104 +132,75 @@ main
         color: $dark
 
     .block__product:nth-child(2) .product__image
-      background-image: url('img/menHat0.jpeg')
+      background-image: url("img/menHat0.jpeg")
       background-position: 20%
 
     .block__product:nth-child(3) .product__image
-      background-image: url('img/mJeans0.jpg')
+      background-image: url("img/mJeans0.jpg")
 
     .block__product:nth-child(4) .product__image
-      background-image: url('img/menHat1.jpeg')
+      background-image: url("img/menHat1.jpeg")
 
   .main__block:nth-of-type(2)
-
     .block__product:nth-child(1) .product__image
-      background-image: url('img/mJeans1.jpeg')
+      background-image: url("img/mJeans1.jpeg")
       background-position: 80%
 
     .block__product:nth-child(2) .product__image
-      background-image: url('img/mJeans2.jpeg')
+      background-image: url("img/mJeans2.jpeg")
       background-position: 60%
 
     .block__product:nth-child(3) .product__image
-      background-image: url('img/menHat2.jpeg')
+      background-image: url("img/menHat2.jpeg")
 
     .block__product:nth-child(4) .product__image
-      background-image: url('img/mtshirt1.jpeg')
+      background-image: url("img/mtshirt1.jpeg")
 
-/*Footer
+  .main__carousel
+    width: 100%
+    height: 400px
+    // background: #ccc
+    overflow-x: scroll
+    overflow-y: hidden
 
-footer
-  background: #090909
-  overflow: hidden
-  padding: 50px 0
+    &::-webkit-scrollbar
+      height: 0px
 
-.footer__text
-  font-family: "Vollkorn", serif
-  font-size: 1em
-  padding: 20px
-  color: #eee
+    .carousel__images
+      display: flex
+      height: 100%
+      // background: #a33
+      justify-content: center
 
-.footer__col
-  width: 90%
-  max-width: 400px
+      .carouselImage
+        flex-shrink: 0
+        width: 300px
+        margin: 0 5px
+        color: $light
+        font-size: 2em
+        background-position: 50%
+        background-repeat: no-repeat
+        background-size: cover
+        display: grid
+        align-content: center
+        text-align: center
+        text-decoration: none
+        font-family: $sans
+        text-shadow: 0px 0px 30px #000
 
-  /*    background: #ccc;
-  padding: 0 20px
-  box-sizing: border-box
-  margin: 20px auto 0
+        &:nth-child(1)
+          background-image: url("img/menHat0.jpeg")
+          background-position: 20%
 
-.footer__h3
-  font-family: "Work Sans", sans-serif
-  color: #eee
-  line-height: 40px
-  text-align: center
-  cursor: pointer
-  -webkit-tap-highlight-color: transparent
+        &:nth-child(2)
+          background-image: url("img/mtshirt0.jpeg")
 
-.footer__list
-  border-top: 1px solid #eee
-  max-height: 0px
-  overflow: hidden
-  transition: 0.3s
-  transition-timing-function: linear
+        &:nth-child(3)
+          background-image: url("img/menHat2.jpeg")
 
-  li
-    line-height: 40px
-    text-align: center
-    list-style: none
-    font-family: "Vollkorn", serif
+        &:nth-child(4)
+          background-image: url("img/mJeans1.jpeg")
+          background-position: 80%
 
-    &:first-child
-      margin-top: 10px
-
-    a
-      text-decoration: none
-      color: #eee
-
-.footer__logo
-  background: #eee
-  font-family: "Vollkorn", serif
-  font-size: 2em
-  margin-top: 50px
-  line-height: 100px
-  text-align: center
-  position: relative
-
-.footer__myname
-  font-family: "Work Sans", sans-serif
-  color: #eee
-  line-height: 20px
-  font-size: 0.5rem
-  text-align: center
-  text-decoration: none
-  display: block
-
-.footer__logo a
-  text-decoration: none
-  color: #090909
-  font-weight: normal
-
-.hidden
-  opacity: 0
-  transition: 1s
+        &:nth-child(5)
+          background-image: url("img/mtshirt1.jpeg")
