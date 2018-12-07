@@ -104,13 +104,15 @@ main .main__block .block__product:last-child {
 }
 
 main .main__block .block__product .product__image {
-  background-image: url("img/mtshirt0.jpeg");
-  background-position: 50%;
-  background-repeat: no-repeat;
-  background-size: cover;
   width: 100%;
   height: 50%;
   flex: 1;
+}
+
+main .main__block .block__product .product__image img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
 }
 
 main .main__block .block__product .product__Name {
@@ -129,37 +131,6 @@ main .main__block .block__product .product_Price {
   font-size: 1em;
   text-align: center;
   color: #0c0c0c;
-}
-
-main .main__block .block__product:nth-child(2) .product__image {
-  background-image: url("img/menHat0.jpeg");
-  background-position: 20%;
-}
-
-main .main__block .block__product:nth-child(3) .product__image {
-  background-image: url("img/mJeans0.jpg");
-}
-
-main .main__block .block__product:nth-child(4) .product__image {
-  background-image: url("img/menHat1.jpeg");
-}
-
-main .main__block:nth-of-type(2) .block__product:nth-child(1) .product__image {
-  background-image: url("img/mJeans1.jpeg");
-  background-position: 80%;
-}
-
-main .main__block:nth-of-type(2) .block__product:nth-child(2) .product__image {
-  background-image: url("img/mJeans2.jpeg");
-  background-position: 60%;
-}
-
-main .main__block:nth-of-type(2) .block__product:nth-child(3) .product__image {
-  background-image: url("img/menHat2.jpeg");
-}
-
-main .main__block:nth-of-type(2) .block__product:nth-child(4) .product__image {
-  background-image: url("img/mtshirt1.jpeg");
 }
 
 main .main__carousel {

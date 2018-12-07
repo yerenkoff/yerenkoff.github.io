@@ -5,25 +5,55 @@ var scrollNumber = 0;
 var startNumber;
 var endNumber;
 var plusNumber;
+var recArray = Array.from(document.getElementsByClassName("block__product"));
 
-function sortBy() {
+function sortBy(item) {
     var wrappers = document.getElementsByClassName("main__block");
+    var blocksArray = Array.from(document.getElementsByClassName("block__product"));
+    console.log(blocksArray[0].children[2].textContent);
+    if (item.getAttribute("data-item-type") == "fromLow") {
+        blocksArray.sort(
+            function(a, b) {
+                return a.children[2].textContent.slice(0, -1) - b.children[2].textContent.slice(0, -1);
+            }
+        );
+    } else if (item.getAttribute("data-item-type") == "fromHigh") {
+        blocksArray.sort(
+            function(a, b) {
+                return b.children[2].textContent.slice(0, -1) - a.children[2].textContent.slice(0, -1);
+            }
+        );
+    } else if (item.getAttribute("data-item-type") == "byName") {
+        blocksArray.sort(function(a, b) {
+            if (a.children[1].textContent < b.children[1].textContent) {
+                return -1;
+            }
+
+            if (a.children[1].textContent > b.children[1].textContent) {
+                return 1;
+            }
+
+            return 0;
+        });
+    } else if (item.getAttribute("data-item-type") == "byRecs") {
+        blocksArray = Array.from(recArray);
+    }
 
     [].forEach.call(
         wrappers,
         function(wrapper) {
-            [].forEach.call(
-                wrapper.getElementsByClassName('block__product'),
-                function(block) {
-                    block.sort(function(a, b) {
-                        console.log(a);
-                    });
-                });
-            // wrapper.getElementsByClassName('block__product').sort(function(a, b) {
-            //     console.log(12);
-            // });
-            console.log(wrapper.getElementsByClassName('block__product'));
+            while (wrapper.firstChild) {
+                wrapper.removeChild(wrapper.firstChild);
+                console.log("removed");
+            }
+            for (var i = 0; i < 4; i++) {
+                wrapper.appendChild(blocksArray[0]);
+                blocksArray.shift();
+            }
         });
+    setTimeout(function() {
+        wrappers[0].children[0].style.opacity = 1;
+    }, 1000);
 }
 
 function showSort() {
@@ -44,7 +74,17 @@ window.onload = function() {
     // carouselScrolling("left", 0);
 }
 
-sortBy();
+// sortBy();
+
+// var myNode = document.getElementById("foo");
+// while (myNode.firstChild) {
+//     myNode.removeChild(myNode.firstChild);
+// }
+
+
+
+
+
 
 // function carouselScrolling(vec) {
 //     var i = 0;
