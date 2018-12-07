@@ -53,7 +53,7 @@ function sortBy(item) {
         });
     setTimeout(function() {
         wrappers[0].children[0].style.opacity = 1;
-    }, 1000);
+    }, 0);
 }
 
 function showSort() {
