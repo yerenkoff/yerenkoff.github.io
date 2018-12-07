@@ -23,6 +23,7 @@ var fadeIn = function() {
     elements[0].style.opacity = 1;
     elements[1].style.opacity = 1;
     window.onscroll = function() {
+        console.log(1);
         checkPosition();
         checkHeaderPos();
         clearTimeout(upButtonFadeIn);

@@ -6,6 +6,26 @@ var startNumber;
 var endNumber;
 var plusNumber;
 
+function sortBy() {
+    var wrappers = document.getElementsByClassName("main__block");
+
+    [].forEach.call(
+        wrappers,
+        function(wrapper) {
+            [].forEach.call(
+                wrapper.getElementsByClassName('block__product'),
+                function(block) {
+                    block.sort(function(a, b) {
+                        console.log(a);
+                    });
+                });
+            // wrapper.getElementsByClassName('block__product').sort(function(a, b) {
+            //     console.log(12);
+            // });
+            console.log(wrapper.getElementsByClassName('block__product'));
+        });
+}
+
 function showSort() {
     if (sortList.style.maxHeight == 0 || sortList.style.maxHeight == "0px") {
         sortList.style.maxHeight = "300px";
@@ -23,6 +43,8 @@ window.onload = function() {
     carousel.scrollLeft = scrollNumber;
     // carouselScrolling("left", 0);
 }
+
+sortBy();
 
 // function carouselScrolling(vec) {
 //     var i = 0;

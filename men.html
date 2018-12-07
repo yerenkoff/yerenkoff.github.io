@@ -10,6 +10,11 @@
         <link href="https://fonts.googleapis.com/css?family=Vollkorn:400,600|Work+Sans:600&amp;subset=cyrillic-ext" rel="stylesheet">
     </head>
     <body>
+        <button class="upButton" onclick="goUp()">
+            <i class="material-icons">
+                keyboard_arrow_up
+            </i>
+        </button>
         <header>
             <div class="container header">
                 <button onclick="showNav()">
@@ -91,9 +96,9 @@
         <main class="main">
             <div class="container">
 
-                <h2 class="main__h2">MEN</h2>
+                <h2 class="main__h2" onclick="sortBy()">MEN</h2>
 
-                <p class="main__quote">-one of the most interesting things is when you lose your mind where something starts to born...</p>
+                <p class="main__quote hidden">-one of the most interesting things is when you lose your mind where something starts to born...</p>
 
                 <div class="main__sorting">
                     <button class="sorting__sortButton" onclick="showSort()">Sort by</button>
@@ -106,29 +111,29 @@
                 </div>
 
                 <section class="main__block">
-                    <a href="#/" class="block__product">
+                    <a href="#/" class="block__product hidden">
                         <div class="product__image"></div>
                         <h3 class="product__Name">Belaya T-Shirt</h3>
                         <h3 class="product_Price">200$</h3>
                     </a>
-                    <a href="#/" class="block__product">
+                    <a href="#/" class="block__product hidden">
                         <div class="product__image"></div>
                         <h3 class="product__Name">Chornaya Kepka</h3>
                         <h3 class="product_Price">210$</h3>
                     </a>
-                    <a href="#/" class="block__product">
+                    <a href="#/" class="block__product hidden">
                         <div class="product__image"></div>
                         <h3 class="product__Name">Slim or Regular Jeans</h3>
                         <h3 class="product_Price">260$</h3>
                     </a>
-                    <a href="#/" class="block__product">
+                    <a href="#/" class="block__product hidden">
                         <div class="product__image"></div>
                         <h3 class="product__Name">Clool light brown Hat</h3>
                         <h3 class="product_Price">140$</h3>
                     </a>
                 </section>
 
-                <div class="main__carousel">
+                <div class="main__carousel hidden">
                     <div class="carousel__images">
                         <a href="#/" class="carouselImage">Purchaise it!</a>
                         <a href="#/" class="carouselImage">Purchaise it!</a>
@@ -139,22 +144,22 @@
                 </div>
 
                 <section class="main__block">
-                    <a href="#/" class="block__product">
+                    <a href="#/" class="block__product hidden">
                         <div class="product__image"></div>
                         <h3 class="product__Name">Dark Wave Jeans</h3>
                         <h3 class="product_Price">190$</h3>
                     </a>
-                    <a href="#/" class="block__product">
+                    <a href="#/" class="block__product hidden">
                         <div class="product__image"></div>
                         <h3 class="product__Name">Light Wave Jeans</h3>
                         <h3 class="product_Price">200$</h3>
                     </a>
-                    <a href="#/" class="block__product">
+                    <a href="#/" class="block__product hidden">
                         <div class="product__image"></div>
                         <h3 class="product__Name">BlackHat</h3>
                         <h3 class="product_Price">110$</h3>
                     </a>
-                    <a href="#/" class="block__product">
+                    <a href="#/" class="block__product hidden">
                         <div class="product__image"></div>
                         <h3 class="product__Name">"Darky" T-Shirt</h3>
                         <h3 class="product_Price">190$</h3>
