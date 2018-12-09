@@ -9,6 +9,8 @@ var upButtonFadeIn;
 var upButtonFadeOut;
 // to stop animation function:
 var canceled = false;
+var canvas = document.getElementById('canvas');
+var ctx = canvas.getContext('2d');
 
 function openShipping() {
     canceled = false;
