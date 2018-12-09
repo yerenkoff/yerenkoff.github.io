@@ -7,7 +7,34 @@ var footerList;
 var upButton = document.getElementsByClassName("upButton")[0];
 var upButtonFadeIn;
 var upButtonFadeOut;
+// to stop animation function:
+var canceled = false;
 
+function openShipping() {
+    canceled = false;
+    document.getElementsByClassName('footer__shipping')[0].style.display = "grid";
+    setTimeout(function() {
+        document.getElementsByClassName('footer__shipping')[0].style.opacity = "1";
+    }, 0);
+
+    function Render() {
+        if (canceled) {
+            return;
+        }
+        window.requestAnimationFrame(Render);
+        console.log(1);
+    }
+
+    Render();
+}
+
+function closeShipping() {
+    canceled = true;
+    document.getElementsByClassName('footer__shipping')[0].style.opacity = "0";
+    setTimeout(function() {
+        document.getElementsByClassName('footer__shipping')[0].style.display = "none";
+    }, 500);
+}
 
 function goUp() {
     window.scrollTo({

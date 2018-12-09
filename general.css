@@ -37,7 +37,7 @@ header {
   max-height: 100px;
   height: 100vw;
   margin: auto;
-  transition: .3s;
+  transition: 0.3s;
   transition-timing-function: linear;
 }
 
@@ -52,7 +52,7 @@ header {
   outline: none;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
-  transition: .3s;
+  transition: 0.3s;
   transition-timing-function: linear;
 }
 
@@ -84,7 +84,7 @@ header {
   max-height: 0;
   overflow-y: scroll;
   top: 100px;
-  transition: .3s;
+  transition: 0.3s;
   transition-timing-function: linear;
   z-index: 9;
 }
@@ -107,7 +107,7 @@ header {
   margin-bottom: 0px;
   max-height: 0;
   overflow: hidden;
-  transition: .5s;
+  transition: 0.5s;
 }
 
 #navigationBar .list:last-child li:last-child {
@@ -128,7 +128,7 @@ header {
   font-size: 0.7em;
   color: #eee;
   outline: none;
-  transition: .5s;
+  transition: 0.5s;
   overflow: hidden;
 }
 
@@ -144,7 +144,7 @@ header {
   position: absolute;
   max-width: 900px;
   top: 100px;
-  transition: .3s;
+  transition: 0.3s;
   transition-timing-function: linear;
   z-index: 9999;
 }
@@ -188,7 +188,7 @@ header {
   font-size: 1.5em;
   z-index: 9;
   opacity: 0;
-  transition: .3s;
+  transition: 0.3s;
   transition-timing-function: linear;
   cursor: pointer;
   outline: none;
@@ -207,14 +207,75 @@ footer {
   padding: 50px 0;
 }
 
-.footer__text {
-  font-family: 'Vollkorn', serif;
+footer .footer__shipping {
+  background: #aaa;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: none;
+  justify-items: center;
+  align-content: center;
+  z-index: 999;
+  transition: .3s;
+  opacity: 0;
+}
+
+footer .shippingModal {
+  width: 90%;
+  max-width: 600px;
+  height: 400px;
+  background: #999;
+  overflow: hidden;
+  padding-top: 40px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+footer .shippingModal .shippingInfo {
+  width: 100%;
+  height: 100%;
+  background: #bbb;
+  overflow-y: scroll;
+}
+
+footer .shippingModal #canvas {
+  width: 100%;
+  height: 40px;
+  background: #555;
+  left: 0;
+  top: 0px;
+  position: absolute;
+}
+
+footer .shippingModal .shipping__h2 {
+  background: #ddd;
+  font-family: "Work Sans", sans-serif;
+  font-size: 2em;
+  text-align: center;
+  color: #0c0c0c;
+  line-height: 80px;
+}
+
+footer .shippingModal .shipping__p {
+  font-family: "Work Sans", sans-serif;
+  font-size: 1em;
+  text-align: left;
+  color: #0c0c0c;
+  text-indent: 20px;
+  margin-bottom: 10px;
+  padding: 0 20px;
+}
+
+footer .footer__text {
+  font-family: "Vollkorn", serif;
   font-size: 1em;
   padding: 20px;
   color: #eee;
 }
 
-.footer__col {
+footer .footer__col {
   width: 90%;
   max-width: 400px;
   /*    background: #ccc; */
@@ -223,7 +284,7 @@ footer {
   margin: 20px auto 0;
 }
 
-.footer__h3 {
+footer .footer__h3 {
   font-family: "Work Sans", sans-serif;
   color: #eee;
   line-height: 40px;
@@ -232,31 +293,31 @@ footer {
   -webkit-tap-highlight-color: transparent;
 }
 
-.footer__list {
+footer .footer__list {
   border-top: 1px solid #eee;
   max-height: 0px;
   overflow: hidden;
-  transition: .3s;
+  transition: 0.3s;
   transition-timing-function: linear;
 }
 
-.footer__list li {
+footer .footer__list li {
   line-height: 40px;
   text-align: center;
   list-style: none;
   font-family: "Vollkorn", serif;
 }
 
-.footer__list li:first-child {
+footer .footer__list li:first-child {
   margin-top: 10px;
 }
 
-.footer__list li a {
+footer .footer__list li a {
   text-decoration: none;
   color: #eee;
 }
 
-.footer__logo {
+footer .footer__logo {
   background: #eee;
   font-family: "Vollkorn", serif;
   font-size: 2em;
@@ -266,7 +327,7 @@ footer {
   position: relative;
 }
 
-.footer__myname {
+footer .footer__myname {
   font-family: "Work Sans", sans-serif;
   color: #eee;
   line-height: 20px;
@@ -276,7 +337,7 @@ footer {
   display: block;
 }
 
-.footer__logo a {
+footer .footer__logo a {
   text-decoration: none;
   color: #090909;
   font-weight: normal;

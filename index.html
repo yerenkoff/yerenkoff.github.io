@@ -154,22 +154,37 @@
             </div>
         </main>
         <footer>
+            <section class="footer__shipping" onclick="closeShipping()">
+                <div class="shippingModal">
+                    <canvas id="canvas"></canvas>
+                    <div class="shippingInfo">
+                        <h2 class="shipping__h2">Shipping</h2>
+                        <p class="shipping__p">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat, et quo minima dolorem porro expedita harum blanditiis quis deserunt neque tenetur quasi, dignissimos recusandae.</p>
+                        <p class="shipping__p">Distinctio aspernatur temporibus libero dignissimos veritatis. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam officia distinctio dicta quae cupiditate dignissimos laudantium reprehenderit, beatae aspernatur,
+                            voluptates odit consectetur earum nam voluptate dolorem consequuntur maxime voluptatum nostrum. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi repudiandae ipsa veritatis vel quia autem delectus voluptas minima rem. Quidem
+                            inventore odio porro dicta error deserunt reiciendis sequi quod nesciunt? Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                        <p class="shipping__p">Iure odit, possimus? Nobis officia nam, ut velit molestias accusamus officiis, ex, deserunt unde obcaecati labore incidunt sequi consequuntur quae. Doloremque, est!</p>
+                        <p class="shipping__p">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum maxime laboriosam odit, blanditiis, ducimus error dolores sed quaerat cum quod dolorum voluptate minus magni odio doloremque, sint voluptates suscipit. Animi.</p>
+                        <p class="shipping__p">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto esse quidem tenetur ad maxime, nobis. Voluptatibus nam deleniti accusantium doloremque a laudantium aliquam, nostrum eveniet quasi id repudiandae temporibus accusamus!</p>
+                    </div>
+                </div>
+            </section>
             <div class="container">
                 <p class="footer__text">We always try to make soft the angles of our souls, but everytime something starts to connect our minds with the biggest substance in the world that can control all sollutions which can make our lifes better.</p>
                 <nav class="footer__col">
                     <h3 class="footer__h3" onclick="showList(this)">Contacts</h3>
                     <ul class="footer__list">
                         <li>
-                            <a href="#/">Twitter</a>
+                            <a href="https://twitter.com/" target="blank">Twitter</a>
                         </li>
                         <li>
-                            <a href="#/">Instagram</a>
+                            <a href="https://www.instagram.com/" target="blank">Instagram</a>
                         </li>
                         <li>
-                            <a href="#/">Telegram</a>
+                            <a href="http://t.me/kirya" target="blank">Telegram</a>
                         </li>
                         <li>
-                            <a href="#/">YouTube</a>
+                            <a href="https://www.youtube.com/" target="blank">YouTube</a>
                         </li>
                     </ul>
                 </nav>
@@ -177,7 +192,7 @@
                     <h3 class="footer__h3" onclick="showList(this)">Options</h3>
                     <ul class="footer__list">
                         <li>
-                            <a href="#/">Shipping</a>
+                            <a href="#/" onclick="openShipping()">Shipping</a>
                         </li>
                         <li>
                             <a href="#/">Jobs</a>

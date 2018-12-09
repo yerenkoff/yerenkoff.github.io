@@ -39,8 +39,9 @@ header
   max-height: 100px
   height: 100vw
   margin: auto
-  transition: .3s
+  transition: 0.3s
   transition-timing-function: linear
+
   button
     background: none
     border: none
@@ -52,15 +53,18 @@ header
     outline: none
     cursor: pointer
     -webkit-tap-highlight-color: transparent
-    transition: .3s
+    transition: 0.3s
     transition-timing-function: linear
+
   #materialMenuIcon
     transition: 1s
+
   h1
     flex: 1
     display: grid
     align-content: center
     text-align: center
+
     a
       text-decoration: none
       color: #eee
@@ -77,11 +81,13 @@ header
   max-height: 0
   overflow-y: scroll
   top: 100px
-  transition: .3s
+  transition: 0.3s
   transition-timing-function: linear
   z-index: 9
+
   &::-webkit-scrollbar
     width: 0px
+
   button
     margin: auto !important
     height: 50px
@@ -89,14 +95,17 @@ header
     font-family: "Work Sans", sans-serif
     font-size: 1em
     border-bottom: 1px solid #0c0c0c
+
   .list
     text-align: center
     margin-bottom: 0px
     max-height: 0
     overflow: hidden
-    transition: .5s
+    transition: 0.5s
+
     &:last-child li:last-child
       padding-bottom: 10px
+
   ul li a
     width: 200px
     margin: auto
@@ -105,14 +114,16 @@ header
     align-content: center
     text-decoration: none
     text-align: left
+
     /*    background: #ccc;
     font-family: "Vollkorn", serif
     font-weight: normal
     font-size: 0.7em
     color: #eee
     outline: none
-    transition: .5s
+    transition: 0.5s
     overflow: hidden
+
     &:hover
       color: #555
 
@@ -124,7 +135,7 @@ header
   position: absolute
   max-width: 900px
   top: 100px
-  transition: .3s
+  transition: 0.3s
   transition-timing-function: linear
   z-index: 9999
 
@@ -134,6 +145,7 @@ header
   flex-direction: row
   padding: 5px
   box-sizing: border-box
+
   input
     flex: 1
     border: 0
@@ -142,6 +154,7 @@ header
     outline: none
     font-size: 1em
     font-family: "Work Sans", sans-serif
+
   button
     margin: 0 !important
     height: 50px
@@ -162,7 +175,7 @@ header
   font-size: 1.5em
   z-index: 9
   opacity: 0
-  transition: .3s
+  transition: 0.3s
   transition-timing-function: linear
   cursor: pointer
   outline: none
@@ -180,67 +193,126 @@ footer
   overflow: hidden
   padding: 50px 0
 
-.footer__text
-  font-family: 'Vollkorn', serif
-  font-size: 1em
-  padding: 20px
-  color: #eee
+  .footer__shipping
+    background: #aaa
+    position: fixed
+    width: 100%
+    height: 100%
+    top: 0
+    left: 0
+    display: none
+    justify-items: center
+    align-content: center
+    z-index: 999
+    transition: .3s
+    opacity: 0
 
-.footer__col
-  width: 90%
-  max-width: 400px
-  /*    background: #ccc;
-  padding: 0 20px
-  box-sizing: border-box
-  margin: 20px auto 0
+  .shippingModal
+    width: 90%
+    max-width: 600px
+    height: 400px
+    background: #999
+    overflow: hidden
+    padding-top: 40px
+    box-sizing: border-box
+    position: relative
 
-.footer__h3
-  font-family: "Work Sans", sans-serif
-  color: #eee
-  line-height: 40px
-  text-align: center
-  cursor: pointer
-  -webkit-tap-highlight-color: transparent
+    .shippingInfo
+      width: 100%
+      height: 100%
+      background: #bbb
+      overflow-y: scroll
 
-.footer__list
-  border-top: 1px solid #eee
-  max-height: 0px
-  overflow: hidden
-  transition: .3s
-  transition-timing-function: linear
-  li
+    #canvas
+      width: 100%
+      height: 40px
+      background: #555
+      left: 0
+      top: 0px
+      position: absolute
+
+    .shipping__h2
+      background: #ddd
+      font-family: $sans
+      font-size: 2em
+      text-align: center
+      color: $dark
+      line-height: 80px
+
+    .shipping__p
+      font-family: $sans
+      font-size: 1em
+      text-align: left
+      color: $dark
+      text-indent: 20px
+      margin-bottom: 10px
+      padding: 0 20px
+
+  .footer__text
+    font-family: "Vollkorn", serif
+    font-size: 1em
+    padding: 20px
+    color: #eee
+
+  .footer__col
+    width: 90%
+    max-width: 400px
+
+    /*    background: #ccc;
+    padding: 0 20px
+    box-sizing: border-box
+    margin: 20px auto 0
+
+  .footer__h3
+    font-family: "Work Sans", sans-serif
+    color: #eee
     line-height: 40px
     text-align: center
-    list-style: none
+    cursor: pointer
+    -webkit-tap-highlight-color: transparent
+
+  .footer__list
+    border-top: 1px solid #eee
+    max-height: 0px
+    overflow: hidden
+    transition: 0.3s
+    transition-timing-function: linear
+
+    li
+      line-height: 40px
+      text-align: center
+      list-style: none
+      font-family: "Vollkorn", serif
+
+      &:first-child
+        margin-top: 10px
+
+      a
+        text-decoration: none
+        color: #eee
+
+  .footer__logo
+    background: #eee
     font-family: "Vollkorn", serif
-    &:first-child
-      margin-top: 10px
-    a
-      text-decoration: none
-      color: #eee
+    font-size: 2em
+    margin-top: 50px
+    line-height: 100px
+    text-align: center
+    position: relative
 
-.footer__logo
-  background: #eee
-  font-family: "Vollkorn", serif
-  font-size: 2em
-  margin-top: 50px
-  line-height: 100px
-  text-align: center
-  position: relative
+  .footer__myname
+    font-family: "Work Sans", sans-serif
+    color: #eee
+    line-height: 20px
+    font-size: 0.5rem
+    text-align: center
+    text-decoration: none
+    display: block
 
-.footer__myname
-  font-family: "Work Sans", sans-serif
-  color: #eee
-  line-height: 20px
-  font-size: 0.5rem
-  text-align: center
-  text-decoration: none
-  display: block
-
-.footer__logo a
-  text-decoration: none
-  color: #090909
-  font-weight: normal
+  .footer__logo a
+    text-decoration: none
+    color: #090909
+    font-weight: normal
 
 .hidden
   opacity: 0
