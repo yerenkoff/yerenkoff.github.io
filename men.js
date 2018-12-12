@@ -2,15 +2,42 @@ var sortList = document.getElementsByClassName("sorting__sortNav")[0];
 var carousel = document.getElementsByClassName("main__carousel")[0];
 var carousel__images = document.getElementsByClassName("carousel__images")[0];
 var scrollNumber = 0;
-var startNumber;
-var endNumber;
-var plusNumber;
 var recArray = Array.from(document.getElementsByClassName("block__product"));
+var startScroll = 0;
+var endScroll = 0;
+var deltaX = 0;
+var slidesNumber = Array.from(document.getElementsByClassName("carouselImage"));
+var scrollsNumber = [];
+var scrollingWidth = 0;
+
+slidesNumber.forEach(function(el) {
+    scrollsNumber.push(scrollingWidth);
+    scrollingWidth += 310;
+});
+
+console.log(scrollsNumber);
+
+carousel.addEventListener("touchstart", function(event) {
+    startScroll = event.touches[0].clientX;
+    console.log(startScroll);
+}, false);
+
+carousel.addEventListener("touchend", function(event) {
+    endScroll = event.changedTouches[0].clientX;
+    deltaX = endScroll - startScroll;
+
+    console.log(endScroll);
+}, false);
 
 function sortBy(item) {
     var wrappers = document.getElementsByClassName("main__block");
     var blocksArray = Array.from(document.getElementsByClassName("block__product"));
     console.log(blocksArray[0].children[2].textContent);
+
+    blocksArray.forEach(function(el) {
+        el.style.opacity = 0;
+    });
+
     if (item.getAttribute("data-item-type") == "fromLow") {
         blocksArray.sort(
             function(a, b) {
@@ -70,6 +97,7 @@ window.onload = function() {
     // carousel__images.style.width = (window.innerWidth - 300) + 1540 + "px";
     carousel__images.style.width = (window.innerWidth - 300) + 1540 + "px";
     scrollNumber = (carousel.scrollWidth - carousel.offsetWidth) / 2;
+    // carousel.scrollLeft = scrollNumber;
     carousel.scrollLeft = scrollNumber;
     // carouselScrolling("left", 0);
 }
