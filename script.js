@@ -4,6 +4,49 @@ var showcaseCounter = 1;
 var showcase__link = document.getElementsByClassName("showcase__link");
 var showcaseCircles = document.getElementsByClassName("showcaseCircles")[0].children;
 var circlesCounter = 0;
+// to stop animation function:
+var canceled = false;
+var sky = document.getElementById('sky');
+var plane = document.getElementById('plane');
+var shippingInfo = document.getElementsByClassName('shippingInfo')[0];
+var distance = 0;
+var initDistance = 0;
+
+function shippingScroll() {
+    initDistance = distance;
+    distance = ((shippingInfo.offsetWidth - 120) * shippingInfo.scrollTop / (shippingInfo.scrollHeight - shippingInfo.offsetHeight)) + 40;
+    if (initDistance > distance) {
+        plane.style.transform = "rotate(-90deg)";
+        // setTimeout(function(){plane.style.left = distance + 40 + "px";}, 300);
+        plane.style.left = distance + "px";
+        console.log("back");
+    } else {
+        plane.style.transform = "rotate(90deg)";
+        // setTimeout(function(){plane.style.left = distance + "px";}, 300);
+        plane.style.left = distance + "px";
+    }
+    console.log(distance);
+    console.log(initDistance);
+}
+
+function openShipping() {
+    document.getElementsByClassName("shippingModal")[0].style.height = window.innerHeight * 0.9 + "px";
+    document.body.style.overflow = "hidden";
+    canceled = false;
+    document.getElementsByClassName('footer__shipping')[0].style.display = "grid";
+    setTimeout(function() {
+        document.getElementsByClassName('footer__shipping')[0].style.opacity = "1";
+    }, 0);
+}
+
+function closeShipping() {
+    document.body.style.overflow = "visible";
+    canceled = true;
+    document.getElementsByClassName('footer__shipping')[0].style.opacity = "0";
+    setTimeout(function() {
+        document.getElementsByClassName('footer__shipping')[0].style.display = "none";
+    }, 500);
+}
 
 [].forEach.call(
     document.getElementsByClassName("arrowButton"),
