@@ -15,14 +15,15 @@ var distance = 0;
 var initDistance = 0;
 
 function shippingScroll() {
-    initDistance = distance;
     distance = ((shippingInfo.offsetWidth - 120) * shippingInfo.scrollTop / (shippingInfo.scrollHeight - shippingInfo.offsetHeight)) + 40;
-    if (initDistance > distance) {
+    if ((shippingInfo.scrollTop - initDistance) < -5) {
+        initDistance = shippingInfo.scrollTop;
         plane.style.transform = "rotate(-90deg)";
         // setTimeout(function(){plane.style.left = distance + 40 + "px";}, 300);
         plane.style.left = distance + "px";
         console.log("back");
-    } else {
+    } else if ((shippingInfo.scrollTop - initDistance) > 5) {
+        initDistance = shippingInfo.scrollTop;
         plane.style.transform = "rotate(90deg)";
         // setTimeout(function(){plane.style.left = distance + "px";}, 300);
         plane.style.left = distance + "px";
