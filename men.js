@@ -1,24 +1,18 @@
 var sortList = document.getElementsByClassName("sorting__sortNav")[0];
-// var carousel = document.getElementsByClassName("main__carousel")[0];
-// var carousel__images = document.getElementsByClassName("carousel__images")[0];
-// var scrollNumber = 0;
 var recArray = Array.from(document.getElementsByClassName("block__product"));
-// var startScroll = 0;
-// var endScroll = 0;
-// var deltaX = 0;
-// var slidesNumber = Array.from(document.getElementsByClassName("carouselImage"));
-// var scrollsNumber = [];
-// var scrollingWidth = 0;
-// var scrollPos = 2;
 var container = document.getElementsByClassName('main__carousel')[0];
 var carousel = document.getElementsByClassName('carousel__images')[0];
 var images = document.getElementsByClassName('carouselImage');
 var startNumber = 0;
 var touchendNumber = 0;
+var touchendNumberY = 0;
 var scrollNumber = 0;
+var startNumberY = 0;
 var scrollArray = [];
 var slide = (Array.from(images).length - 1) / 2;
 console.log(scrollArray);
+var executed = false;
+var allow = false;
 
 window.onload = function() {
     carousel.style.left = scrollArray[slide] + 'px';
@@ -32,21 +26,25 @@ var endNumber = scrollArray[slide];
 console.log(endNumber);
 
 carousel.addEventListener('touchstart', function(event) {
+    executed = false;
     startNumber = Math.round(event.targetTouches[0].clientX);
+    startNumberY = Math.round(event.targetTouches[0].clientY);
     console.log(startNumber);
     console.log(endNumber);
 });
 
 carousel.addEventListener('touchend', function(event) {
+    document.body.style.overflow = "visible";
     carousel.style.transition = ".3s";
     setTimeout(function() {
         carousel.style.transition = "0s";
     }, 300);
     touchendNumber = Math.round(event.changedTouches[0].clientX);
-    if ((startNumber - touchendNumber) > 70 && slide < 4) {
+    touchendNumberY = Math.round(event.changedTouches[0].clientY);
+    if ((startNumber - touchendNumber) > 70 && slide < 4 && allow) {
         slide++;
         carousel.style.left = scrollArray[slide] + 'px';
-    } else if ((startNumber - touchendNumber) < -70 && slide > 0) {
+    } else if ((startNumber - touchendNumber) < -70 && slide > 0 && allow) {
         slide--;
         carousel.style.left = scrollArray[slide] + 'px';
     } else {
@@ -58,85 +56,28 @@ carousel.addEventListener('touchend', function(event) {
 });
 
 carousel.addEventListener('touchmove', function(event) {
-    if (slide <= 4 && slide >= 0) {
+    console.log(Math.abs(startNumberY - event.targetTouches[0].clientY));
+    var touchmoveY = event.targetTouches[0].clientY;
+    moveSlides(touchmoveY);
+    if (allow) {
+        document.body.style.overflow = "hidden";
         var touch = event.targetTouches[0];
+        // console.log(Math.abs(startNumberY - event.targetTouches[0].pageY));
         scrollNumber = touch.pageX - startNumber + endNumber;
         carousel.style.left = scrollNumber + 'px';
     }
 }, false);
 
-
-// slidesNumber.forEach(function(el) {
-//     scrollsNumber.push(scrollingWidth);
-//     scrollingWidth += 310;
-// });
-
-// function carouselScrolling(vec) {
-//     var i = 0;
-//     var id = setInterval(function frame() {
-//         if (i == scrollNumber) {
-//             clearInterval(id);
-//             console.log("clear");
-//             console.log("scrollNumber " + scrollNumber);
-//             console.log("scrolleft " + carousel.scrollLeft);
-//         } else {
-//             i++;
-//             if (vec == "left") {
-//                 carousel.scrollLeft += 1;
-//             } else {
-//                 carousel.scrollLeft -= 1;
-//             }
-//
-//         }
-//     }, 1);
-//
-//
-// }
-
-// console.log(scrollsNumber);
-//
-// function carouselScrolling(dir, amount) {
-//     var i = 0;
-//     var id = setInterval(
-//         function() {
-//           console.log(amount, "amount");
-//           console.log(carousel.scrollLeft, "carsrolll");
-//           if (carousel.scrollLeft >= amount) {
-//             clearInterval(id);
-//           } else {
-//               i++;
-//               if (dir == "left") {
-//                 carousel.scrollLeft += 1;
-//               } else {
-//                 carousel.scrollLeft -= 1;
-//               }
-//           }
-//         }, 1);
-// }
-//
-// carousel.addEventListener("touchstart", function(event) {
-//     startScroll = event.touches[0].clientX;
-//     console.log(startScroll);
-// }, false);
-//
-// carousel.addEventListener("touchend", function(event) {
-//     endScroll = event.changedTouches[0].clientX;
-//     deltaX = endScroll - startScroll;
-//
-//     if (deltaX < 0) {
-//         scrollPos += 1;
-//         amount = scrollsNumber[scrollPos];
-//         carouselScrolling("left", amount);
-//         console.log(1);
-//     } else if (deltaX > 0) {
-//         scrollPos -= 1;
-//         amount = scrollsNumber[scrollPos];
-//         carouselScrolling("right", amount);
-//         console.log(2);
-//     }
-//
-//     console.log(endScroll);
-// }, false);
+function moveSlides(touchmoveY) {
+    if (!executed) {
+        executed = true;
+        if (Math.abs(startNumberY - touchmoveY) < 5) {
+            allow = true;
+        } else {
+            allow = false;
+        }
+    }
+}
 
 function sortBy(item) {
     var wrappers = document.getElementsByClassName("main__block");
@@ -199,142 +140,3 @@ function showSort() {
         sortList.style.maxHeight = "0px";
     }
 }
-
-// window.onload = function() {
-//     // carousel__images.style.width = (window.innerWidth - 300) + 1540 + "px";
-//     carousel__images.style.width = (window.innerWidth - 300) + 1540 + "px";
-//     scrollNumber = (carousel.scrollWidth - carousel.offsetWidth) / 2;
-//     // carousel.scrollLeft = scrollNumber;
-//     carousel.scrollLeft = scrollNumber;
-//     // carouselScrolling("left", 0);
-// }
-
-// sortBy();
-
-// var myNode = document.getElementById("foo");
-// while (myNode.firstChild) {
-//     myNode.removeChild(myNode.firstChild);
-// }
-
-
-
-
-
-
-// function carouselScrolling(vec) {
-//     var i = 0;
-//     var id = setInterval(function frame() {
-//         if (i == scrollNumber) {
-//             clearInterval(id);
-//             console.log("clear");
-//             console.log("scrollNumber " + scrollNumber);
-//             console.log("scrolleft " + carousel.scrollLeft);
-//         } else {
-//             i++;
-//             if (vec == "left") {
-//                 carousel.scrollLeft += 1;
-//             } else {
-//                 carousel.scrollLeft -= 1;
-//             }
-//
-//         }
-//     }, 1);
-//
-//
-// }
-
-// carousel.addEventListener('touchstart', function(event) {
-//     touchNumber = event.changedTouches[0].clientX;
-// }, false);
-//
-// carousel.addEventListener('touchend', function(event) {
-//     // event.preventDefault();
-//     // console.log(event.changedTouches[0].clientX);
-//     if (touchNumber > event.changedTouches[0].clientX) {
-//         console.log("go to left!");
-//         scrollNumber += 320 - Math.round(touchNumber - event.changedTouches[0].clientX);
-//         console.log("start " + touchNumber);
-//         console.log("end " + event.changedTouches[0].clientX);
-//         console.log("diff " + Math.round(touchNumber - event.changedTouches[0].clientX));
-//         console.log("mid " + window.innerWidth / 2);
-//         dir = "left";
-//         carouselScrolling(dir, touchNumber);
-//         // console.log(Math.abs(touchNumber - event.changedTouches[0].clientX));
-//     } else {
-//         console.log("go to right!");
-//         scrollNumber -= 320 - Math.round(event.changedTouches[0].clientX - touchNumber);
-//         console.log("end " + event.changedTouches[0].clientX);
-//         console.log("mid " + window.innerWidth / 2);
-//         dir = "right";
-//         carouselScrolling(dir);
-//     }
-// }, false);
-//
-// carousel.addEventListener('touchmove', function(event) {
-//     console.log(carousel.scrollLeft);
-// });
-
-
-// window.onload = function() {
-//     carousel__images.style.width = (window.innerWidth - 300) + 1540 + "px";
-//     scrollNumber = (carousel.scrollWidth - carousel.offsetWidth) / 2;
-//     carouselScrolling();
-// }
-//
-// function carouselScrolling(dir) {
-//     if (!dir) {
-//         carousel.scrollLeft = scrollNumber;
-//     } else {
-//         var i = 0;
-//         var id = setInterval(function frame() {
-//             if (i == 20) {
-//                 clearInterval(id);
-//             } else {
-//                 i++;
-//                 if (dir = "left") {
-//                     carousel.scrollLeft -= 1;
-//                 } else if (dir = "right") {
-//                     carousel.scrollLeft += 1;
-//                 }
-//             }
-//         }, 1);
-//     }
-//     console.log(carousel.scrollLeft);
-// }
-//
-// carousel.addEventListener('touchstart', function(event) {
-//     startNumber = event.changedTouches[0].clientX;
-// }, false);
-//
-// carousel.addEventListener('touchend', function(event) {
-//     endNumber = event.changedTouches[0].clientX;
-//     var direction;
-//     if (startNumber > endNumber) {
-//         direction = "left";
-//         plusNumber = 310;
-//         console.log(direction);
-//     } else if (startNumber < endNumber) {
-//         direction = "right";
-//         plusNumber = 310;
-//         console.log(direction);
-//     }
-//     carouselScrolling(direction);
-// }, false);
-//
-// carousel.addEventListener('touchmove', function(event) {
-//     event.preventDefault();
-//     scrollNumber += (startNumber - event.changedTouches[0].clientX) / 10;
-//     carouselScrolling();
-//     console.log(event.changedTouches[0].clientX);
-//     // carousel.scrollLeft += event.changedTouches[0].clientX;
-// });
-
-// touchstart
-//   initial num
-//
-// touchend
-//   if initial num > touchendnum {
-//     make scroll num smaller
-//   } else {
-//     make scrollnum bigger
-//   }
