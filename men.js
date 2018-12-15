@@ -1,33 +1,142 @@
 var sortList = document.getElementsByClassName("sorting__sortNav")[0];
-var carousel = document.getElementsByClassName("main__carousel")[0];
-var carousel__images = document.getElementsByClassName("carousel__images")[0];
-var scrollNumber = 0;
+// var carousel = document.getElementsByClassName("main__carousel")[0];
+// var carousel__images = document.getElementsByClassName("carousel__images")[0];
+// var scrollNumber = 0;
 var recArray = Array.from(document.getElementsByClassName("block__product"));
-var startScroll = 0;
-var endScroll = 0;
-var deltaX = 0;
-var slidesNumber = Array.from(document.getElementsByClassName("carouselImage"));
-var scrollsNumber = [];
-var scrollingWidth = 0;
+// var startScroll = 0;
+// var endScroll = 0;
+// var deltaX = 0;
+// var slidesNumber = Array.from(document.getElementsByClassName("carouselImage"));
+// var scrollsNumber = [];
+// var scrollingWidth = 0;
+// var scrollPos = 2;
+var container = document.getElementsByClassName('main__carousel')[0];
+var carousel = document.getElementsByClassName('carousel__images')[0];
+var images = document.getElementsByClassName('carouselImage');
+var startNumber = 0;
+var touchendNumber = 0;
+var scrollNumber = 0;
+var scrollArray = [];
+var slide = (Array.from(images).length - 1) / 2;
+console.log(scrollArray);
 
-slidesNumber.forEach(function(el) {
-    scrollsNumber.push(scrollingWidth);
-    scrollingWidth += 310;
+window.onload = function() {
+    carousel.style.left = scrollArray[slide] + 'px';
+}
+
+for (var i = Math.round((window.innerWidth - images[0].offsetWidth) / 2); i >= -(Array.from(images).length - 1) * images[0].offsetWidth; i -= images[0].offsetWidth + 10) {
+    scrollArray.push(i);
+}
+
+var endNumber = scrollArray[slide];
+console.log(endNumber);
+
+carousel.addEventListener('touchstart', function(event) {
+    startNumber = Math.round(event.targetTouches[0].clientX);
+    console.log(startNumber);
+    console.log(endNumber);
 });
 
-console.log(scrollsNumber);
+carousel.addEventListener('touchend', function(event) {
+    carousel.style.transition = ".3s";
+    setTimeout(function() {
+        carousel.style.transition = "0s";
+    }, 300);
+    touchendNumber = Math.round(event.changedTouches[0].clientX);
+    if ((startNumber - touchendNumber) > 70 && slide < 4) {
+        slide++;
+        carousel.style.left = scrollArray[slide] + 'px';
+    } else if ((startNumber - touchendNumber) < -70 && slide > 0) {
+        slide--;
+        carousel.style.left = scrollArray[slide] + 'px';
+    } else {
+        carousel.style.left = scrollArray[slide] + 'px';
+    }
+    setTimeout(function() {
+        endNumber = carousel.offsetLeft;
+    }, 300);
+});
 
-carousel.addEventListener("touchstart", function(event) {
-    startScroll = event.touches[0].clientX;
-    console.log(startScroll);
+carousel.addEventListener('touchmove', function(event) {
+    if (slide <= 4 && slide >= 0) {
+        var touch = event.targetTouches[0];
+        scrollNumber = touch.pageX - startNumber + endNumber;
+        carousel.style.left = scrollNumber + 'px';
+    }
 }, false);
 
-carousel.addEventListener("touchend", function(event) {
-    endScroll = event.changedTouches[0].clientX;
-    deltaX = endScroll - startScroll;
 
-    console.log(endScroll);
-}, false);
+// slidesNumber.forEach(function(el) {
+//     scrollsNumber.push(scrollingWidth);
+//     scrollingWidth += 310;
+// });
+
+// function carouselScrolling(vec) {
+//     var i = 0;
+//     var id = setInterval(function frame() {
+//         if (i == scrollNumber) {
+//             clearInterval(id);
+//             console.log("clear");
+//             console.log("scrollNumber " + scrollNumber);
+//             console.log("scrolleft " + carousel.scrollLeft);
+//         } else {
+//             i++;
+//             if (vec == "left") {
+//                 carousel.scrollLeft += 1;
+//             } else {
+//                 carousel.scrollLeft -= 1;
+//             }
+//
+//         }
+//     }, 1);
+//
+//
+// }
+
+// console.log(scrollsNumber);
+//
+// function carouselScrolling(dir, amount) {
+//     var i = 0;
+//     var id = setInterval(
+//         function() {
+//           console.log(amount, "amount");
+//           console.log(carousel.scrollLeft, "carsrolll");
+//           if (carousel.scrollLeft >= amount) {
+//             clearInterval(id);
+//           } else {
+//               i++;
+//               if (dir == "left") {
+//                 carousel.scrollLeft += 1;
+//               } else {
+//                 carousel.scrollLeft -= 1;
+//               }
+//           }
+//         }, 1);
+// }
+//
+// carousel.addEventListener("touchstart", function(event) {
+//     startScroll = event.touches[0].clientX;
+//     console.log(startScroll);
+// }, false);
+//
+// carousel.addEventListener("touchend", function(event) {
+//     endScroll = event.changedTouches[0].clientX;
+//     deltaX = endScroll - startScroll;
+//
+//     if (deltaX < 0) {
+//         scrollPos += 1;
+//         amount = scrollsNumber[scrollPos];
+//         carouselScrolling("left", amount);
+//         console.log(1);
+//     } else if (deltaX > 0) {
+//         scrollPos -= 1;
+//         amount = scrollsNumber[scrollPos];
+//         carouselScrolling("right", amount);
+//         console.log(2);
+//     }
+//
+//     console.log(endScroll);
+// }, false);
 
 function sortBy(item) {
     var wrappers = document.getElementsByClassName("main__block");
@@ -89,18 +198,16 @@ function showSort() {
     } else {
         sortList.style.maxHeight = "0px";
     }
-    console.log(carousel.scrollLeft);
-    console.log(scrollNumber);
 }
 
-window.onload = function() {
-    // carousel__images.style.width = (window.innerWidth - 300) + 1540 + "px";
-    carousel__images.style.width = (window.innerWidth - 300) + 1540 + "px";
-    scrollNumber = (carousel.scrollWidth - carousel.offsetWidth) / 2;
-    // carousel.scrollLeft = scrollNumber;
-    carousel.scrollLeft = scrollNumber;
-    // carouselScrolling("left", 0);
-}
+// window.onload = function() {
+//     // carousel__images.style.width = (window.innerWidth - 300) + 1540 + "px";
+//     carousel__images.style.width = (window.innerWidth - 300) + 1540 + "px";
+//     scrollNumber = (carousel.scrollWidth - carousel.offsetWidth) / 2;
+//     // carousel.scrollLeft = scrollNumber;
+//     carousel.scrollLeft = scrollNumber;
+//     // carouselScrolling("left", 0);
+// }
 
 // sortBy();
 

@@ -136,24 +136,21 @@ main .main__block .block__product .product_Price {
 
 main .main__carousel {
   width: 100%;
-  height: 400px;
-  overflow-x: scroll;
-  overflow-y: hidden;
-}
-
-main .main__carousel::-webkit-scrollbar {
-  height: 0px;
+  height: 200px;
+  overflow-x: hidden;
+  position: relative;
 }
 
 main .main__carousel .carousel__images {
-  display: flex;
+  width: 1540px;
   height: 100%;
-  justify-content: center;
+  position: absolute;
+  top: 0;
 }
 
 main .main__carousel .carousel__images .carouselImage {
-  flex-shrink: 0;
   width: 300px;
+  height: 100%;
   margin: 0 5px;
   color: #eee;
   font-size: 2em;
@@ -162,6 +159,7 @@ main .main__carousel .carousel__images .carouselImage {
   background-size: cover;
   display: grid;
   align-content: center;
+  float: left;
   text-align: center;
   text-decoration: none;
   font-family: "Work Sans", sans-serif;
@@ -171,6 +169,7 @@ main .main__carousel .carousel__images .carouselImage {
 main .main__carousel .carousel__images .carouselImage:nth-child(1) {
   background-image: url("img/menHat0.jpeg");
   background-position: 20%;
+  margin-left: 0;
 }
 
 main .main__carousel .carousel__images .carouselImage:nth-child(2) {
@@ -188,4 +187,5 @@ main .main__carousel .carousel__images .carouselImage:nth-child(4) {
 
 main .main__carousel .carousel__images .carouselImage:nth-child(5) {
   background-image: url("img/mtshirt1.jpeg");
+  margin-right: 0;
 }
