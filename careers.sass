@@ -1,0 +1,99 @@
+$dark: #0c0c0c
+$light: #eee
+$mid: #555
+$serif: "Vollkorn", serif
+$sans: "Work Sans", sans-serif
+
+main
+  margin-top: 100px
+
+  .helloHeader
+    line-height: 80px
+    width: 100%
+    color: $dark
+    font-family: $sans
+    font-size: 2em
+    text-align: center
+
+  .types
+    width: 90%
+    max-width: 300px
+    padding: 2px
+    box-sizing: border-box
+    // background: #c14
+    margin: auto
+    display: flex
+    flex-wrap: wrap
+    justify-content: center
+
+    .type
+      margin: 2px
+      background: $light
+      padding: 10px
+      min-width: 70px
+      font-size: 1em
+      font-family: $sans
+      color: $dark
+      display: grid
+      text-align: center
+      align-content: center
+      transition: .3s
+      box-sizing: border-box
+      cursor: pointer
+
+      &:hover
+        background: $dark
+        color: $light
+
+  .artHeader
+    line-height: 80px
+    width: 100%
+    color: $dark
+    font-family: $sans
+    font-size: 1em
+    text-align: center
+    margin: 100px 0 0
+    transition: .3s
+    // text-shadow: 1px 1px 0px #44cccc
+    // filter: drop-shadow(-1px -1px 0px #cc4343)
+    // border: 1px solid #fff
+
+  .typeDescription
+    display: none
+    opacity: 0
+    transition: .3s
+    // background: #ccc
+    width: 100%
+    margin: auto
+
+    .typeBlock
+      // background: #aaa
+      margin: 20px auto
+      // box-shadow: 0px 0px 5px #bbb
+      // background: $light
+
+      .typeHeader
+        font-size: 1.5em
+        font-family: $sans
+        padding: 10px
+        color: $dark
+        // background: #444
+        box-sizing: border-box
+        display: block
+        text-decoration: none
+
+      .city
+        font-size: 0.7em
+        color: #555
+        padding: 0 10px
+        font-family: $sans
+        // background: #c14
+        box-sizing: border-box
+
+      .typeText
+        // background: #4cc
+        font-family: $serif
+        font-size: 1em
+        color: $dark
+        padding: 10px
+        box-sizing: border-box

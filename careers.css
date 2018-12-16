@@ -1,0 +1,93 @@
+main {
+  margin-top: 100px;
+}
+
+main .helloHeader {
+  line-height: 80px;
+  width: 100%;
+  color: #0c0c0c;
+  font-family: "Work Sans", sans-serif;
+  font-size: 2em;
+  text-align: center;
+}
+
+main .types {
+  width: 90%;
+  max-width: 300px;
+  padding: 2px;
+  box-sizing: border-box;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+main .types .type {
+  margin: 2px;
+  background: #eee;
+  padding: 10px;
+  min-width: 70px;
+  font-size: 1em;
+  font-family: "Work Sans", sans-serif;
+  color: #0c0c0c;
+  display: grid;
+  text-align: center;
+  align-content: center;
+  transition: .3s;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+main .types .type:hover {
+  background: #0c0c0c;
+  color: #eee;
+}
+
+main .artHeader {
+  line-height: 80px;
+  width: 100%;
+  color: #0c0c0c;
+  font-family: "Work Sans", sans-serif;
+  font-size: 1em;
+  text-align: center;
+  margin: 100px 0 0;
+  transition: .3s;
+}
+
+main .typeDescription {
+  display: none;
+  opacity: 0;
+  transition: .3s;
+  width: 100%;
+  margin: auto;
+}
+
+main .typeDescription .typeBlock {
+  margin: 20px auto;
+}
+
+main .typeDescription .typeBlock .typeHeader {
+  font-size: 1.5em;
+  font-family: "Work Sans", sans-serif;
+  padding: 10px;
+  color: #0c0c0c;
+  box-sizing: border-box;
+  display: block;
+  text-decoration: none;
+}
+
+main .typeDescription .typeBlock .city {
+  font-size: 0.7em;
+  color: #555;
+  padding: 0 10px;
+  font-family: "Work Sans", sans-serif;
+  box-sizing: border-box;
+}
+
+main .typeDescription .typeBlock .typeText {
+  font-family: "Vollkorn", serif;
+  font-size: 1em;
+  color: #0c0c0c;
+  padding: 10px;
+  box-sizing: border-box;
+}

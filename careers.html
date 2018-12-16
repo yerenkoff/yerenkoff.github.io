@@ -2,7 +2,7 @@
 <html>
     <head>
         <title>RHINO, DOG AND GOAT</title>
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="careers.css">
         <link rel="stylesheet" href="general.css">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,7 +15,7 @@
                 keyboard_arrow_up
             </i>
         </button>
-        <header id="header">
+        <header>
             <div class="container header">
                 <button onclick="showNav()">
                     <i class="material-icons" id="materialMenuIcon">menu</i>
@@ -93,72 +93,95 @@
                 </form>
             </div>
         </header>
-        <div class="showcase">
-            <div class="container showcaseContainer">
-                <div id="showcaseImages" class="showcaseImages">
-                    <a href="#/" class="showcase__link"></a>
-                </div>
-                <ul class="showcaseArrows">
-                    <li class="arrowButton">‹</li>
-                    <li class="arrowButton">›</li>
-                </ul>
-                <ul class="showcaseCircles">
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                </ul>
-            </div>
-        </div>
         <main>
-            <div class="container main">
-                <h3 class="mainHeader hidden">Promos</h3>
-                <ul id="promos">
-                    <li class="hidden">
-                        <h2>Gorgeous Dress!</h2>
-                        <div class="promoImage"></div>
-                        <p>Look at this amazing wonderful and superb cloth! I want to dress it right now. Oh, how can I hold myself from IT!</p>
-                        <a href="#/" class="smallButton">buy!</a>
-                    </li>
-                    <li class="hidden">
-                        <h2>Lovely hat</h2>
-                        <div class="promoImage"></div>
-                        <p>Very pretty. Very Pretty. The prettiest hat You ever had!</p>
-                        <a href="#/" class="smallButton">buy!</a>
-                    </li>
-                    <li class="hidden">
-                        <h2>Wonderful Cat</h2>
-                        <div class="promoImage"></div>
-                        <p>If you want to buy a cat, BUY it! Here. You really can buy it hear. Really. Real Cat. Sure.</p>
-                        <a href="#/" class="smallButton">buy!</a>
-                    </li>
+            <div class="container">
+                <h2 class="helloHeader">We want You!</h2>
+                <ul class="types">
+                    <li class="type" onclick="showDescription(this)" data-item-type="Engineering">Engineering</li>
+                    <li class="type" onclick="showDescription(this)" data-item-type="Marketing">Marketing</li>
+                    <li class="type" onclick="showDescription(this)" data-item-type="Economics">Economics</li>
+                    <li class="type" onclick="showDescription(this)" data-item-type="IT">IT</li>
+                    <li class="type" onclick="showDescription(this)" data-item-type="Technology">Technology</li>
                 </ul>
-                <h3 class="mainHeader hidden">Here only Jeans.</h3>
-                <ul id="jeans" class="hidden">
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li id="jeansHeaderContainer">
-                        <div id="jeans__headerAndButton">
-                            <h3 id="jeansHeader">Jeans are really awesome!</h3>
-                            <a href="#/" class="smallButton">Look</a>
-                        </div>
-                    </li>
-                </ul>
-                <form action="#?" id="main__emailForm" class="hidden">
-                    <h2>Subscribe! Of course if you want.</h2>
-                    <input type="text" placeholder="type your e-mail">
-                    <button type="button" class="smallButton">Subscribe!</button>
-                </form>
+                <h2 class="artHeader hidden">Make our Brand better.</h2>
+                <section class="typeDescription sectionEngineering">
+                    <div class="typeBlock">
+                        <a href="#/" class="typeHeader">Main engineer</a>
+                        <h4 class="city">Toulouse</h4>
+                        <p class="typeText">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae veritatis, hic sed totam veniam voluptate quidem vitae tempore, vel amet illo quaerat possimus ab maxime saepe adipisci qui. Quas, voluptas.</p>
+                    </div>
+                    <div class="typeBlock">
+                        <a href="#/" class="typeHeader">Engineer</a>
+                        <h4 class="city">Lisbon</h4>
+                        <p class="typeText">Nisi excepturi reprehenderit accusamus perspiciatis officia quam illo pariatur, ratione, amet eius. Quasi officia dolore laboriosam. Iusto ipsum facere sequi, alias obcaecati!</p>
+                    </div>
+                </section>
+                <section class="typeDescription sectionMarketing">
+                    <div class="typeBlock">
+                        <a href="#/" class="typeHeader">Marketer</a>
+                        <h4 class="city">Toulouse</h4>
+                        <p class="typeText">Enim culpa nemo dolorem incidunt pariatur quos cumque autem velit officiis laboriosam, assumenda inventore cum, at fuga eos. Animi id, deleniti! Architecto.</p>
+                    </div>
+                    <div class="typeBlock">
+                        <a href="#/" class="typeHeader">Analyst</a>
+                        <h4 class="city">Toulouse</h4>
+                        <p class="typeText">Quod voluptate cum animi maxime tempora incidunt, ratione ipsa doloremque perspiciatis natus atque laborum assumenda optio vero nisi alias. Nemo, doloremque, repudiandae!</p>
+                    </div>
+                    <div class="typeBlock">
+                        <a href="#/" class="typeHeader">Manager</a>
+                        <h4 class="city">Amsterdam</h4>
+                        <p class="typeText">Itaque numquam quasi accusantium nemo tenetur assumenda, enim, alias at minima voluptatem obcaecati laboriosam iusto modi eaque illo asperiores minus dolore, cum!</p>
+                    </div>
+                </section>
+                <section class="typeDescription sectionEconomics">
+                    <div class="typeBlock">
+                        <a href="#/" class="typeHeader">Economist:)</a>
+                        <h4 class="city">Strasbourg</h4>
+                        <p class="typeText">Odit autem non esse consectetur, voluptate accusamus aliquid beatae commodi delectus, distinctio, quas! Voluptas minima est cum itaque odit, numquam in sunt.</p>
+                    </div>
+                    <div class="typeBlock">
+                        <a href="#/" class="typeHeader">Accountant</a>
+                        <h4 class="city">Strasbourg</h4>
+                        <p class="typeText">Necessitatibus unde, aspernatur dolorem hic quibusdam iure, sint assumenda magnam culpa ab nihil iste perferendis praesentium. Vero perspiciatis a asperiores quibusdam soluta.</p>
+                    </div>
+                </section>
+                <section class="typeDescription sectionIT">
+                    <div class="typeBlock">
+                        <a href="#/" class="typeHeader">Designer</a>
+                        <h4 class="city">Strasbourg</h4>
+                        <p class="typeText">Consequuntur dolorem expedita iusto dolores, quis asperiores nam harum, excepturi obcaecati maxime rerum et debitis ea non aut necessitatibus perspiciatis autem, culpa!</p>
+                    </div>
+                    <div class="typeBlock">
+                        <a href="#/" class="typeHeader">Python Programmer</a>
+                        <h4 class="city">Amsterdam</h4>
+                        <p class="typeText">Commodi voluptate officia doloribus voluptates obcaecati molestias recusandae eaque optio beatae architecto possimus quisquam quas non ad magnam qui est dignissimos, eum.</p>
+                    </div>
+                </section>
+                <section class="typeDescription sectionTechnology">
+                    <div class="typeBlock">
+                        <a href="#/" class="typeHeader">Seamstress</a>
+                        <h4 class="city">Strasbourg</h4>
+                        <p class="typeText">Illo tempora iusto et nam! Distinctio eveniet deleniti numquam perferendis suscipit blanditiis totam similique placeat, quod incidunt tempore nihil molestias nam maiores.</p>
+                    </div>
+                    <div class="typeBlock">
+                        <a href="#/" class="typeHeader">Technologist</a>
+                        <h4 class="city">Toulouse</h4>
+                        <p class="typeText">Dolore fuga at explicabo rerum blanditiis necessitatibus, odit quae sint dicta quos maiores quod provident quibusdam suscipit, quia. Vel cumque, ullam voluptate!</p>
+                    </div>
+                    <div class="typeBlock">
+                        <a href="#/" class="typeHeader">Administrator</a>
+                        <h4 class="city">Amsterdam</h4>
+                        <p class="typeText">Distinctio veniam ut libero perferendis nesciunt, iste beatae omnis dignissimos, iusto dolorem iure, illum officia autem! Ipsa molestias optio voluptatum architecto laborum!</p>
+                    </div>
+                </section>
             </div>
         </main>
         <footer>
             <section class="footer__shipping" onclick="closeShipping()">
                 <div class="shippingModal">
                     <div id="sky">
-                      <span id="letterA">A</span>
-                      <span id="letterB">B</span>
+                        <span id="letterA">A</span>
+                        <span id="letterB">B</span>
                         <i class="material-icons" id="plane">
                             airplanemode_active
                         </i>
@@ -186,16 +209,16 @@
                     <h3 class="footer__h3" onclick="showList(this)">Contacts</h3>
                     <ul class="footer__list">
                         <li>
-                            <a href="https://twitter.com/" target="blank">Twitter</a>
+                            <a href="#/">Twitter</a>
                         </li>
                         <li>
-                            <a href="https://www.instagram.com/" target="blank">Instagram</a>
+                            <a href="#/">Instagram</a>
                         </li>
                         <li>
-                            <a href="http://t.me/kirya" target="blank">Telegram</a>
+                            <a href="#/">Telegram</a>
                         </li>
                         <li>
-                            <a href="https://www.youtube.com/" target="blank">YouTube</a>
+                            <a href="#/">YouTube</a>
                         </li>
                     </ul>
                 </nav>
@@ -206,7 +229,7 @@
                             <a href="#/" onclick="openShipping()">Shipping</a>
                         </li>
                         <li>
-                            <a href="careers.html">Careers</a>
+                            <a href="#/">Careers</a>
                         </li>
                         <li>
                             <a href="#/">Account</a>
@@ -222,8 +245,7 @@
                 <a href="#/" class="footer__myname">Yerenkoff</a>
             </div>
         </footer>
-        <script src="script.js"></script>
+        <script src="careers.js"></script>
         <script src="general.js"></script>
-        <!-- <script type="text/javascript"> setTimeout(function () { location = '' }, 2000) </script> -->
     </body>
 </html>

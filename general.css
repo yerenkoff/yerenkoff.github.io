@@ -20,7 +20,6 @@ a {
 
 /*Header */
 header {
-  background: #0c0c0c;
   position: fixed;
   top: 0;
   z-index: 9;
@@ -33,6 +32,7 @@ header {
 }
 
 .header {
+  background-color: #0c0c0c;
   display: flex;
   max-height: 100px;
   height: 100vw;
@@ -219,7 +219,6 @@ footer .footer__col {
   width: 90%;
   max-width: 400px;
   /*    background: #ccc; */
-  padding: 0 20px;
   box-sizing: border-box;
   margin: 20px auto 0;
 }
@@ -237,7 +236,7 @@ footer .footer__list {
   border-top: 1px solid #eee;
   max-height: 0px;
   overflow: hidden;
-  transition: 0.3s;
+  transition: .6s;
   transition-timing-function: linear;
 }
 
