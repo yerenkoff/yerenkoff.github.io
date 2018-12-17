@@ -154,11 +154,20 @@
             </div>
         </main>
         <footer>
+            <div class="footer__returns" onclick="closeReturns()">
+                <div class="returnsModal">
+                    <h2 class="returnsHeader">Returns</h2>
+                    <h3 class="returnsSubtitle">Lorem ipsum</h3>
+                    <p class="returnsText">Autem error a cumque corporis, nesciunt voluptatibus suscipit itaque nemo sed laudantium perspiciatis alias nulla sunt mollitia tempora ipsam voluptates similique recusandae.</p>
+                    <h3 class="returnsSubtitle">Dolor sit amet</h3>
+                    <p class="returnsText">Veniam veritatis necessitatibus saepe in et fuga iure aperiam mollitia dolores molestias soluta distinctio ad asperiores perferendis quaerat quae, sit deleniti. Quo!</p>
+                </div>
+            </div>
             <section class="footer__shipping" onclick="closeShipping()">
                 <div class="shippingModal">
                     <div id="sky">
-                      <span id="letterA">A</span>
-                      <span id="letterB">B</span>
+                        <span id="letterA">A</span>
+                        <span id="letterB">B</span>
                         <i class="material-icons" id="plane">
                             airplanemode_active
                         </i>
@@ -212,7 +221,7 @@
                             <a href="#/">Account</a>
                         </li>
                         <li>
-                            <a href="#/">Returns</a>
+                            <a href="#/" onclick="openReturns()">Returns</a>
                         </li>
                     </ul>
                 </nav>

@@ -7,7 +7,6 @@ var footerList;
 var upButton = document.getElementsByClassName("upButton")[0];
 var upButtonFadeIn;
 var upButtonFadeOut;
-var canceled = false;
 var sky = document.getElementById('sky');
 var plane = document.getElementById('plane');
 var shippingInfo = document.getElementsByClassName('shippingInfo')[0];
@@ -32,10 +31,26 @@ function shippingScroll() {
     console.log(initDistance);
 }
 
+function openReturns() {
+    document.getElementsByClassName("returnsModal")[0].style.height = window.innerHeight * 0.9 + "px";
+    document.body.style.overflow = "hidden";
+    document.getElementsByClassName('footer__returns')[0].style.display = "grid";
+    setTimeout(function() {
+        document.getElementsByClassName('footer__returns')[0].style.opacity = "1";
+    }, 0);
+}
+
+function closeReturns() {
+    document.body.style.overflow = "visible";
+    document.getElementsByClassName('footer__returns')[0].style.opacity = "0";
+    setTimeout(function() {
+        document.getElementsByClassName('footer__returns')[0].style.display = "none";
+    }, 500);
+}
+
 function openShipping() {
     document.getElementsByClassName("shippingModal")[0].style.height = window.innerHeight * 0.9 + "px";
     document.body.style.overflow = "hidden";
-    canceled = false;
     document.getElementsByClassName('footer__shipping')[0].style.display = "grid";
     setTimeout(function() {
         document.getElementsByClassName('footer__shipping')[0].style.opacity = "1";
@@ -44,7 +59,6 @@ function openShipping() {
 
 function closeShipping() {
     document.body.style.overflow = "visible";
-    canceled = true;
     document.getElementsByClassName('footer__shipping')[0].style.opacity = "0";
     setTimeout(function() {
         document.getElementsByClassName('footer__shipping')[0].style.display = "none";
