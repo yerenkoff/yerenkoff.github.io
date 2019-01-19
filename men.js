@@ -71,7 +71,7 @@ carousel.addEventListener('touchmove', function(event) {
 function moveSlides(touchmoveY) {
     if (!executed) {
         executed = true;
-        if (Math.abs(startNumberY - touchmoveY) < 5) {
+        if (Math.abs(startNumberY - touchmoveY) < 10) {
             allow = true;
         } else {
             allow = false;

@@ -168,7 +168,6 @@ function showSearch() {
 function showNav() {
     if (navigationBar.style.maxHeight == 0 || navigationBar.style.maxHeight == "0px") {
         navigationBar.style.maxHeight = window.innerHeight - 100 + "px";
-        navigationBar.style.height = window.innerHeight + "px";
         materialMenuIcon.textContent = "close";
         document.body.style.overflow = "hidden";
     } else {
