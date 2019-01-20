@@ -12,6 +12,13 @@ var plane = document.getElementById('plane');
 var shippingInfo = document.getElementsByClassName('shippingInfo')[0];
 var distance = 0;
 var initDistance = 0;
+var loginForm = document.getElementById("loginForm");
+console.log(loginForm);
+loginForm.onsubmit = function(event) {
+  event.preventDefault();
+  console.log(1);
+    window.location = "/login.html";
+}
 
 function shippingScroll() {
     distance = ((shippingInfo.offsetWidth - 120) * shippingInfo.scrollTop / (shippingInfo.scrollHeight - shippingInfo.offsetHeight)) + 40;

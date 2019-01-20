@@ -1,0 +1,65 @@
+$dark: #0c0c0c
+$light: #eee
+$mid: #555
+$serif: "Vollkorn", serif
+$sans: "Work Sans", sans-serif
+
+main
+  margin-top: 100px
+
+  .helloHeader
+    line-height: 80px
+    width: 100%
+    color: $dark
+    font-family: $sans
+    font-size: 2em
+    text-align: center
+
+  .signInForm
+    width: 90%
+    max-width: 300px
+    padding: 2px
+    box-sizing: border-box
+    margin: auto
+
+    .datas
+      color: $dark
+      width: 100%
+      border: none
+      outline: none
+      border-bottom: 1px solid $dark
+      padding: 5px
+      box-sizing: border-box
+      line-height: 40px
+      font-family: $sans
+      font-size: 1em
+      margin-bottom: 10px
+      -webkit-tap-highlight-color: transparent
+
+    .submit
+      background: $light
+      color: $dark
+      font-size: 1em
+      font-family: $sans
+      width: 100%
+      line-height: 40px
+      background: none
+      border: none
+      cursor: pointer
+      transition: .3s
+      -webkit-tap-highlight-color: transparent
+      outline: none
+
+      &:hover
+        background: $dark
+        color: $light
+
+  .signUpLink
+    text-decoration: none
+    color: #aaa
+    font-size: 1em
+    font-family: $sans
+    margin: 10px auto 50px
+    display: block
+    width: 100px
+    text-align: center

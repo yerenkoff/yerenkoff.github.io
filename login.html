@@ -3,7 +3,7 @@
     <head>
         <title>RHINO, DOG AND GOAT</title>
         <link rel="icon" type="image/png" href="img/favicon.png"/>
-        <link rel="stylesheet" href="men.css">
+        <link rel="stylesheet" href="login.css">
         <link rel="stylesheet" href="general.css">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -56,13 +56,13 @@
                             <a href="men.html">All</a>
                         </li>
                         <li>
-                            <a href="menHats.html">Hats</a>
+                            <a href="#/">Hats</a>
                         </li>
                         <li>
-                            <a href="menTshirts.html">T-Shirts</a>
+                            <a href="#/">T-Shirts</a>
                         </li>
                         <li>
-                            <a href="menJeans.html">Jeans</a>
+                            <a href="#/">Jeans</a>
                         </li>
                     </ul>
                     <button class="menuItem" onclick="openList(this)">Women</button>
@@ -111,79 +111,15 @@
                 </form>
             </div>
         </header>
-        <main class="main">
+        <main>
             <div class="container">
-
-                <h2 class="main__h2">MEN</h2>
-
-                <p class="main__quote hidden">-one of the most interesting things is when you lose your mind where something starts to born...</p>
-
-                <div class="main__sorting">
-                    <button class="sorting__sortButton" onclick="showSort()">Sort by</button>
-                    <nav class="sorting__sortNav">
-                        <a href="#/" onclick="sortBy(this)" data-item-type="fromLow">price: from low to high</a>
-                        <a href="#/" onclick="sortBy(this)" data-item-type="fromHigh">price: from high to low</a>
-                        <a href="#/" onclick="sortBy(this)" data-item-type="byName">by name</a>
-                        <a href="#/" onclick="sortBy(this)" data-item-type="byRecs">by recommendations</a>
-                    </nav>
-                </div>
-
-                <section class="main__block">
-                    <a href="#/" class="block__product hidden">
-                        <div class="product__image"><img src="img/mtshirt0.jpeg" alt=""></div>
-                        <h3 class="product__Name">Belaya T-Shirt</h3>
-                        <h3 class="product_Price">200$</h3>
-                    </a>
-                    <a href="#/" class="block__product hidden">
-                        <div class="product__image"><img src="img/menHat0.jpeg" alt=""></div>
-                        <h3 class="product__Name">Chornaya Kepka</h3>
-                        <h3 class="product_Price">210$</h3>
-                    </a>
-                    <a href="#/" class="block__product hidden">
-                        <div class="product__image"><img src="img/mJeans0.jpg" alt=""></div>
-                        <h3 class="product__Name">Slim or Regular Jeans</h3>
-                        <h3 class="product_Price">260$</h3>
-                    </a>
-                    <a href="#/" class="block__product hidden">
-                        <div class="product__image"><img src="img/menHat1.jpeg" alt=""></div>
-                        <h3 class="product__Name">Cool light brown Hat</h3>
-                        <h3 class="product_Price">140$</h3>
-                    </a>
-                </section>
-
-                <div class="main__carousel hidden">
-                    <div class="carousel__images">
-                        <a href="#/" class="carouselImage">Purchaise it!</a>
-                        <a href="#/" class="carouselImage">Purchaise it!</a>
-                        <a href="#/" class="carouselImage">Purchaise it!</a>
-                        <a href="#/" class="carouselImage">Purchaise it!</a>
-                        <a href="#/" class="carouselImage">Purchaise it!</a>
-                    </div>
-                </div>
-
-                <section class="main__block">
-                    <a href="#/" class="block__product hidden">
-                        <div class="product__image"><img src="img/mJeans1.jpeg" alt=""></div>
-                        <h3 class="product__Name">Dark Wave Jeans</h3>
-                        <h3 class="product_Price">190$</h3>
-                    </a>
-                    <a href="#/" class="block__product hidden">
-                        <div class="product__image"><img src="img/mJeans2.jpeg" alt=""></div>
-                        <h3 class="product__Name">Light Wave Jeans</h3>
-                        <h3 class="product_Price">200$</h3>
-                    </a>
-                    <a href="#/" class="block__product hidden">
-                        <div class="product__image"><img src="img/menHat2.jpeg" alt=""></div>
-                        <h3 class="product__Name">BlackHat</h3>
-                        <h3 class="product_Price">110$</h3>
-                    </a>
-                    <a href="#/" class="block__product hidden">
-                        <div class="product__image"><img src="img/mtshirt1.jpeg" alt=""></div>
-                        <h3 class="product__Name">Darky T-Shirt</h3>
-                        <h3 class="product_Price">190$</h3>
-                    </a>
-                </section>
-
+                <h2 class="helloHeader">Sign in</h2>
+                <form action="#/" class="signInForm">
+                    <input type="text" placeholder="username" class="datas">
+                    <input type="password" placeholder="password" class="datas">
+                    <input type="submit" class="submit">
+                </form>
+                <a href="#/" class="signUpLink">Sign Up</a>
             </div>
         </main>
         <footer>
@@ -248,7 +184,7 @@
                             <a href="#/" onclick="openShipping()">Shipping</a>
                         </li>
                         <li>
-                            <a href="careers.html">Careers</a>
+                            <a href="#/">Careers</a>
                         </li>
                         <li>
                             <a href="#/">Account</a>
@@ -264,7 +200,7 @@
                 <a href="#/" class="footer__myname">Yerenkoff</a>
             </div>
         </footer>
-        <script src="men.js"></script>
+        <script src="careers.js"></script>
         <script src="general.js"></script>
     </body>
 </html>
