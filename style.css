@@ -11,12 +11,12 @@
 }
 
 ::-moz-selection {
-  background-color: #eee;
+  background-color: rgba(238, 238, 238, 0.5019607843);
   color: #222;
 }
 
 ::selection {
-  background-color: #eee;
+  background-color: rgba(238, 238, 238, 0.5019607843);
   color: #222;
 }
 
