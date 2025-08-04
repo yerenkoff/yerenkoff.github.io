@@ -114,6 +114,11 @@ body main #pics {
 body main #pics img {
   width: 100%;
   max-width: 300px;
+  opacity: 0;
+  transition: opacity 0.6s;
+}
+body main #pics img.loaded {
+  opacity: 1;
 }
 body main #pics img:hover {
   cursor: pointer;
