@@ -1,0 +1,106 @@
+*
+    margin: 0
+    padding: 0
+    -webkit-tap-highlight-color: transparent
+    outline: none
+    scrollbar-width: none
+    -ms-overflow-style: none
+    &::-webkit-scrollbar
+        display: none
+
+::selection
+    background-color: #eee
+    color: #222
+
+.container
+    max-width: 1300px
+    width: calc( 100% - 30px )
+    margin: auto
+
+body
+    font-family: "IBM Plex Serif", serif
+    #modal
+        position: fixed
+        width: 100%
+        height: 100%
+        backdrop-filter: blur(10px)
+        top: 0px
+        left: 0
+        z-index: 10
+        display: flex
+        // background-color: lightblue
+        justify-content: center
+        align-items: center
+        overflow-y: scroll
+        opacity: 0
+        pointer-events: none
+        background-color: #fff
+        &.modalShow
+            pointer-events: auto
+            opacity: 1
+        form
+            margin: auto
+            display: flex
+            flex-direction: column
+            align-items: flex-end
+            width: 100%
+            max-width: 600px
+            button
+                display: flex
+                border: none
+                background: none
+                cursor: pointer
+                height: 40px
+                width: 40px
+                justify-content: center
+                align-items: center
+                opacity: 0.5
+                &:hover
+                    opacity: 1
+            video
+                width: 100%
+            h2
+                padding: 20px
+                width: 100%
+                box-sizing: border-box
+                color: #ddd
+                font-style: italic
+                font-size: 60px
+                text-align: center
+                line-height: 50px
+    main
+        height: 100vh
+        overflow-y: scroll
+        a
+            text-decoration: none
+            font-weight: 700
+            display: block
+            font-style: italic
+            font-size: 24px
+            margin: 50px 10px
+            color: #222
+            text-align: center
+            span
+                transition: .3s
+        #pics
+            display: flex
+            flex-wrap: wrap
+            gap: 30px
+            justify-content: center
+            align-items: center
+            img
+                width: 100%
+                max-width: 300px
+                &:hover
+                    cursor: pointer
+        p
+            text-align: center
+            margin: 50px 20px
+            font-style: italic
+            color: #222
+@media (max-width: 600px)
+    body
+        #modal
+            form
+                h2
+                    font-size: 40px
