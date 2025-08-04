@@ -74,6 +74,7 @@ body #modal form button:hover {
 }
 body #modal form video {
   width: 100%;
+  cursor: pointer;
 }
 body #modal form h2 {
   padding: 20px;
@@ -101,6 +102,7 @@ body main a {
 }
 body main a span {
   transition: 0.3s;
+  display: inline-block;
 }
 body main #pics {
   display: flex;
