@@ -44,18 +44,35 @@ body
             align-items: flex-end
             width: 100%
             max-width: 600px
-            button
+            #formTop
                 display: flex
-                border: none
-                background: none
-                cursor: pointer
-                height: 40px
-                width: 40px
-                justify-content: center
+                justify-content: space-between
+                width: 100%
                 align-items: center
-                opacity: 0.5
-                &:hover
-                    opacity: 1
+                a
+                    display: flex
+                    align-items: center
+                    color: #777
+                    border: 1px solid #ccc
+                    text-decoration: none
+                    padding: 0 15px
+                    border-radius: 100px
+                    height: 24px
+                    &:hover
+                        color: #222
+                        border: 1px solid #999                        
+                button
+                    display: flex
+                    border: none
+                    background: none
+                    cursor: pointer
+                    height: 40px
+                    width: 40px
+                    justify-content: center
+                    align-items: center
+                    opacity: 0.5
+                    &:hover
+                        opacity: 1
             video
                 width: 100%
                 cursor: pointer

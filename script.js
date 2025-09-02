@@ -46,6 +46,7 @@ function closeModal() {
 
 function openModal(hashtag) {
   modal.classList.add("modalShow");
+  modalAnchor.href = films[hashtag].youtubeLink;
   modalVideo.poster = hashtag + ".png";
   modalVideo.src = films[hashtag].fileName;
   modalTitle.innerHTML = films[hashtag].name;
@@ -58,42 +59,97 @@ function openModal(hashtag) {
 }
 
 const films = {
+  japan: {
+    fileName:
+      "https://drive.google.com/file/d/1rZ0ictHKb3zoRV88NafBherKv_rlqWeo/view",
+    name: "What a bright flower, Japan.",
+    youtubeLink: "https://youtu.be/LyAviKF_29I",
+  },
   zoomuseum: {
     fileName:
       "https://drive.google.com/file/d/1CJKAn3GG8Doz4S62u7pdXaeW-cO3H1fU/view",
     name: "Зоологический музей",
+    youtubeLink: "https://youtu.be/1ax730_QkM4",
   },
   viipuri: {
     fileName:
       "https://drive.google.com/file/d/1Hz7yxR_fceRv5XujowYyrk9d00A9QSq6/view",
     name: "Viipuri",
+    youtubeLink: "https://youtu.be/rCBCLuaF5wU",
   },
-  hermitage: { fileName: "hermitage.mov", name: "Эрмитаж" },
-  alexandria: { fileName: "alexandria.mov", name: "Парк Александрия" },
-  narvskaya: { fileName: "narvskaya.mov", name: "Санкт-Петербург" },
+  hermitage: {
+    fileName: "hermitage.mov",
+    name: "Эрмитаж",
+    youtubeLink: "https://youtu.be/XobPQeY0UmY",
+  },
+  alexandria: {
+    fileName: "alexandria.mov",
+    name: "Парк Александрия",
+    youtubeLink: "https://youtu.be/haxWNqCpOuM",
+  },
+  narvskaya: {
+    fileName: "narvskaya.mov",
+    name: "Санкт-Петербург",
+    youtubeLink: "https://youtu.be/mZX4Up2xaZ8",
+  },
   pushkin: {
     fileName:
       "https://drive.google.com/file/d/1udRHI5CCF0oxZ7FHFFhrP-QC7_d2iqcm/view",
     name: "Пушкин",
+    youtubeLink: "https://youtu.be/fZ2vfx8iraY",
   },
-  sobor: { fileName: "sobor.mov", name: "Казанский и Исаакиевский" },
-  oranienbaum: { fileName: "oranienbaum.mov", name: "Ораниенбаум" },
-  kresty: { fileName: "kresty.mov", name: "Санкт-Петербург" },
-  mosk: { fileName: "mosk.mov", name: "Московский район" },
-  vas: { fileName: "vas.mp4", name: "Васильевский остров" },
-  peterhof: { fileName: "peterhof.mov", name: "Петергоф" },
-  park: { fileName: "park.mov", name: "Парк Победы" },
+  sobor: {
+    fileName: "sobor.mov",
+    name: "Казанский и Исаакиевский",
+    youtubeLink: "https://youtu.be/XGHE9mmcBXc",
+  },
+  oranienbaum: {
+    fileName: "oranienbaum.mov",
+    name: "Ораниенбаум",
+    youtubeLink: "https://youtu.be/R44RwN2TQYc",
+  },
+  kresty: {
+    fileName: "kresty.mov",
+    name: "Санкт-Петербург",
+    youtubeLink: "https://youtu.be/y8QgPNnNvAI",
+  },
+  mosk: {
+    fileName: "mosk.mov",
+    name: "Московский район",
+    youtubeLink: "https://youtu.be/p_gz4nTFD8M",
+  },
+  vas: {
+    fileName: "vas.mp4",
+    name: "Васильевский остров",
+    youtubeLink: "https://youtu.be/BgdnuEw8abo",
+  },
+  peterhof: {
+    fileName: "peterhof.mov",
+    name: "Петергоф",
+    youtubeLink: "https://youtu.be/KKPkWULdHBw",
+  },
+  park: {
+    fileName: "park.mov",
+    name: "Парк Победы",
+    youtubeLink: "https://youtu.be/aESykWG1KZY",
+  },
   parcpobedy: {
     fileName:
       "https://drive.google.com/file/d/1LbdWt_IN8l2xCKEcDskvOCpRwa2Z6JyD/view",
     name: "Парк Победы",
+    youtubeLink: "https://youtu.be/OBf5V4weY-U",
   },
   lavra: {
     fileName:
       "https://drive.google.com/file/d/1eKRYX86gY4IkaL5krs6wk2UPp7FHwuFs/view",
     name: "Александро-Невская Лавра",
+    youtubeLink: "https://youtu.be/YlAkhXkZ12Y",
   },
-  hockey: { fileName: "hockey.mp4", name: "Матч СКА - Динамо М." },
+  hockey: {
+    fileName: "hockey.mp4",
+    name: "Матч СКА - Динамо М.",
+    youtubeLink: "https://youtu.be/wSrGwG4OAls",
+  },
 };
 
 for (let film in films) {
@@ -109,7 +165,7 @@ for (let film in films) {
   pics.appendChild(poster);
 }
 
-document.querySelectorAll("#pics img").forEach(img => {
+document.querySelectorAll("#pics img").forEach((img) => {
   if (img.complete) {
     img.classList.add("loaded");
   } else {
