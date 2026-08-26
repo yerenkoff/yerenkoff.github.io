@@ -59,6 +59,12 @@ function openModal(hashtag) {
 }
 
 const films = {
+  WalerianLukasinski: {
+    fileName:
+      "https://drive.google.com/file/d/1yCo6w9mFn35lazU25q1EXy0h-Z1pIG6u/view",
+    name: "Walerian Łukasiński",
+    youtubeLink: "https://youtu.be/f_jP4FoYDFQ",
+  },
   japan: {
     fileName:
       "https://drive.google.com/file/d/1rZ0ictHKb3zoRV88NafBherKv_rlqWeo/view",
