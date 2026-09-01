@@ -1,59 +1,71 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Yerenkoff & Biloxi Chess Club</title>
+    <title>Yerenkoff & Biloxi chess club</title>
+    <link rel="icon" href="favicon.jpg" type="image/jpeg">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="shortcut icon" href="favicon.jpg" type="image/jpg" />
   </head>
+
   <body>
-    <div id="modal">
-      <form action="" id="modalForm">
-        <div id="formTop">
-          <a href="" id="modalAnchor" target="_blank">Watch on YouTube</a>
-          <button id="modalCloseButton" type="button">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              xmlns:xlink="http://www.w3.org/1999/xlink"
-              fill="#222"
-              height="20px"
-              width="20px"
-              version="1.1"
-              id="Layer_1"
-              viewBox="0 0 371.23 371.23"
-              xml:space="preserve"
-            >
-              <polygon
-                points="371.23,21.213 350.018,0 185.615,164.402 21.213,0 0,21.213 164.402,185.615 0,350.018 21.213,371.23   185.615,206.828 350.018,371.23 371.23,350.018 206.828,185.615 "
-              />
-            </svg>
-          </button>
-        </div>
-        <video id="modalVideo" controls></video>
-        <h2 id="modalTitle"></h2>
-      </form>
-    </div>
-    <main>
-      <div class="container">
+    <section class="hero">
+      <video
+        class="hero-video"
+        src="videos/hero.mp4"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="metadata"
+      ></video>
+
+      <div class="hero-overlay"></div>
+
+      <div class="hero-content">
         <a
           href="https://www.youtube.com/@yerenkoff"
           target="_blank"
           id="heading"
-        ></a>
-        <div id="pics"></div>
-        <p>
-          My little cultural heritage. I tried to create something good and
-          beautiful.
-        </p>
+        >
+          Yerenkoff &<br />
+          <span>Biloxi chess club</span>
+        </a>
       </div>
+    </section>
+
+    <main class="movies-section">
+      <h2>Films</h2>
+      <div id="moviesGrid"></div>
     </main>
-    <script src="script.js"></script>
+
+    <footer class="footer">
+      <p>I tried to make something good</p>
+    </footer>
+
+    <div id="filmModal" aria-hidden="true">
+      <div class="modal-bar">
+        <button id="youtubeButton" type="button">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8Z"
+            />
+            <path class="youtube-play" d="m9.6 15.9 6.2-3.9-6.2-3.9v7.8Z" />
+          </svg>
+        </button>
+
+        <p id="modalTitle"></p>
+
+        <button class="close-button" id="closeModal" aria-label="Close">
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+      <div class="modal-content" id="modalContent"></div>
+    </div>
+
+    <script src="script.min.js"></script>
   </body>
 </html>
